@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 对数组进行排序
+    var arr=[9,6,10,15,7,3]
+    // 冒泡排序  从左向右 相邻的元素进行比较 将较大的元素放在后面
+    // for(var i=0; i<arr.length-1; i++) {
+    //     for(var j=0; j<arr.length-(i+1); j++) {
+    //         console.log(i,j)
+    //         if(arr[j]>arr[j+1]) {
+    //             var tmp=arr[j]
+    //             arr[j]=arr[j+1]
+    //             arr[j+1]=tmp
+    //         }
+    //     }
+    // }
+    // console.log(arr)
+
+
+
+    // 选择排序  选出一个数值 和后面所有的数进行比较 如果比较出大小就交换位置
+    for(var i=0; i<arr.length-1; i++) {
+        for(var j=i+1; j<arr.length; j++) {
+            if(arr[i]>arr[j]) {
+                var tmp=arr[i]
+                arr[i]=arr[j]
+                arr[j]=tmp
+            }
+        }
+    }
+    console.log(arr)
+
+    var arr=[1,2,2,5,6,6,10]   // [1,2,5,6,10]
+    var arr1=[]
+
+    for(var i=0; i<arr.length; i++){
+        // console.log(arr1.indexOf(arr[i]))
+        if(arr1.indexOf(arr[i])<0) {
+            arr1.push(arr[i])
+        }
+    }
+    console.log(arr1)
+</script>
+</html>

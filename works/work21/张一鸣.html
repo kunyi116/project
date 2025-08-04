@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var arr1=[]
+    var products=[
+        {name:'手机',price:'3999',stock:'15'},
+        {name:'电脑',price:'5999',stock:'8'},
+        {name:'耳机',price:'799',stock:'0'},
+        {name:'手表',price:'1299',stock:'20'},
+    ]
+    for(var i=0;i<products.length;i++){
+        if(products[i].price<5000 && products[i].stock>10 ){
+            arr1.push(products[i].name)
+        }
+    }
+    console.log(arr1)
+
+        products=products.sort(function(a,b){
+        return a.price-b.price
+    })
+    console.log(products)
+</script>
+<script>
+    var movies=[
+        {title:'《流浪地球》',duration:125,genre:'科幻',rating:8.3},
+        {title:'《满江红》',duration:159,genre:'悬疑',rating:7.8},
+        {title:'《星际穿越》',duration:169,genre:'科幻',rating:9.4},
+        {title:'《无名之辈》',duration:108,genre:'喜剧',rating:8.1},
+    ]
+    var obj={}
+    var arr2=[]
+    for(var i=0;i<movies.length;i++){
+        if(movies[i].duration>=120 && movies[i].duration<=160 && movies[i].rating>8 && movies[i].genre=='科幻'){
+            obj.title=movies[i].title
+            obj.duration=movies[i].duration
+            arr2.push(obj)
+        }
+    }
+    console.log(arr2)
+</script>
+<script>
+    var arr=[2,3,4,56,67,98]
+    var num=63
+    arr.push(num)
+        for(var i=0; i<arr.length-1; i++) {
+            for(var j=i+1; j<arr.length; j++) {
+                if(arr[i]>arr[j]) {
+                    var tmp=arr[i]
+                    arr[i]=arr[j]
+                    arr[j]=tmp
+            }
+        }
+    }
+    console.log(arr)
+</script>
+</html>

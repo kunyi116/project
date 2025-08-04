@@ -1,0 +1,98 @@
+body {
+    background-color: #f6f7fb;
+}
+.main{
+    width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 5px 40px 28px 28px;
+}
+.title-box{
+    width: 800px;
+    height: 50px;
+    margin-bottom: 19px;
+    border-bottom: 1px dashed #7a7878 ;
+}
+.title{
+    width: 800px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    color: #1a1a1a;
+    line-height: 25px;
+}
+.head{
+    width: 800px;
+    height: 48px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.author-box{
+    width: 224px;
+    height: 48px;
+    display: flex;
+}
+.author-box img{
+    width: 48px;
+    height: 48px;
+}
+.tou-box{
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.name-box{
+    width: 166px;
+    height: 48px;
+    margin-left: 10px;
+    
+}
+.name{
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+.time{
+    font-size: 15px;
+    font-weight: 500;
+    color: #a3a3a3;
+    margin-top: 5px
+}
+.icon{
+    display: flex;
+    width: 205px;
+    height: 19px;
+    line-height: 70px;
+}
+.icon img{
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+}
+.icon span{
+    font-size: 13px;
+    color: #a3a3a3;
+    margin-right: 10px;
+}
+.content p{
+    line-height: 30px;
+    font-size: 17px;
+    color: #333;
+    word-break: break-all;
+}
+.content img{
+    width: 800px;
+}
+.center-content{
+   text-align: center;
+}
+.normal-content{
+    text-align: justify;
+}
+.change{
+    color:#0047b2;
+}

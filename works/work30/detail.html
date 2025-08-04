@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./css/taodetail.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="head">
+        <img onclick="fanhui()" class="img1"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAsCAYAAABhVUjwAAAAAXNSR0IArs4c6QAAAudJREFUSA3ll7tuE0EUhrM2CBy7QNBwFfeLAEHnJ3D8BCQEJxUSouCOZMVvgC8FFEiYxI5JCgq6cJWs1H4BXgCJij5BClJsvn/lWY1jOx7vpkGMtJ7LzvnOP+fMTDYTE/91KRaL9yuVynyn0/G8vYpEqVR6A2sW6CHP8wr79gJcLper7XZ7HlYS6Bbwn5HBKH0LdE5QgL8BVwuFwvt4FMWCYu9DAW7SXgX6RMzQMQa6iH0OlUnqDcCrCwsLDwRVCQUWFGAOe8V0g7oHKnBMP+MUoEvMD6A4WLGVGtZYMRYU0B2MtXzFdIWYPjQwu3YOBdAa0FmMfSghaKD0kQ2z206hEBQjZ6gc7BoKFHqJRKKOOp0oP/vYNFj+YxnvVoaCBeVEKVGBUtpOUDkcGApBByy/7qJUUJW+5FnQ27w3iaqTKP9E+VYOPz13RXf5dexmulBtfkGfOrB6pgTgAdBNklYD+qzHwrETJC+ZTDawmcGBn/0oUPmOA4pNTk6+pvZvKcYiKRVUJZ5Kpea4T1/Q3o/KX9TvyP5zvYxSYtvb222AW4Kg+jDtdhSgsY2vr69/z2azF4FeYPAg4JuZTOYI400zKUztJ6/ZbK61Wq1LAARP8dyICg8OCIp1hBvUtwD7B4N6MWy8AzAQxdjju2CZZE4bOKFZCrOXe8A2HCfTPOZIjw3vu4RQ2Mnn83dx8oG2/koIfo+vnFdy7Fr6FBtDhYWY+/eGUc67GjF3ujeGgo0Drs9lwP6l1F2B000X3BUGtLNmP6+x9c4zru2osFynf5Txbzvn2v2RYE0G8lFwFDvDncAGPjU1dY72ZR5fOf1jw5Q7g204yg38Gis5Dvyr3ttlLLAMFRaUnh0FHxvchX8SnHagnP4JW3kosAU/g/Ir9PVxeNWGhwZb8NO0AzgxP4nyLyMPiACjCse9imL9U6Pd8icWi+UiKTYOUfiZMJwCrvtcYfmxJ4qNA46/vukOpNPpl2bs36n/AjE6XhzIjrCLAAAAAElFTkSuQmCC"
+            alt="">
+        <p>书籍详情</p>
+        <img onclick="fanhui()" class="img2"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABH5JREFUaAXtmX1oTXEYx3fv3b3MiFGURCtJUpI/UF7yUshLRJOXhGRL27h7b0QUbXd3w9xuJiGJLHnXlD8s0f4SRUJqEfmL8ceM3e3O57nOvd17nXvO2e45Xur86rff+T2v3+f5Pef5ndsyMuxhZ8DOwH+dAYeV6H0+n7evr6/C4XD4Kioqjlrhy5IAAO2sra1tAPDuONDHKysrSwgmHEdL+9H0ABobGwd1dXVdIIh1oOsGcJDnXTx7eL6SlZW1ubi4+EfayBUDTrMMiZ1gMJgD+HsCHrBfXC7XErLulVX2Qhe+yJnl17QTqKmpGQ+oFuYUwL53Op3LysvLn0eB1tXVTQ2Hwy0EMQ7aC+ayqqqqd1H+QFdTTqC+vn4aoNsAMYX5zO12z4oHL+BkL3ThMyXINtETXjoj7QDI7OJQKPSAzI4F1H3AzC0pKfmgBkqhzxU5kRc90VeTNUpLq4RwvpmyOAMYN6Au5ebmbs3Ly+vWc97c3Oxpb28/h94G9EKU23ZO6IKenhp/wAFQ81U4PwIIBwD8AJB+36fmRI0meiTARwLKRI9RzTtRoyarRet3ADhyckGdYJXWGAb8Hi6pE1pOtHjYKiKIY8g4CSSIrSJWw3dFvwJoaGjIom4vAn41Dr/jaBNt8qoWQCM8glhLEFJCg7F5nZd9I+9LlxFdwwEEAoFRnZ2dtwA/GyefmavI1iMjTozIUJJzsHkD+yNZ27Kzs1cWFhZ+0tM1FAC1mtvb23sXY5Mw/paLaWlZWdlLPeP95fv9/snihyAmoPta/PButWvZ0W2jGJ2BUenxk5hPPB7PbCvAC0ixK/ZJ0lPxJ37Fv/BSDc0AqM2lPT09rSiPweg95nyv1/sxlTEz6Ir9eeJP/Ip/wZHKdsoS4mtyG0d5CsVM5vmcnJwd+fn5oVSGzKY3NTW5Ozo6TmN3C7OHgHbSMM4m+1ENgIj30xUOKsJH6M97kxX/1J6X+zC+qsUfLfsAjeNQvO+EALghXdyQJ8n8DiLuRbCQqE/GK/yNZ6qhAL8BcLnAdZobv4AbX/BlxAKg02Tz0lyGtpz5DcENgL8pQv/CIIhVBHAJLEOYd+hQ6+lQnVLfkUHJ3OJhgbL1IHye44tsCeZLZmbmmtLS0icK3/KFL9XpvMDXwDFCnLHK4pE/jOUkW5K7KBYAAkMjrF9/hD48uoc3HGML2f+xAMQffuU+SDWGCSPWRimXmewl2oRJ9gMi+LeG4j8BE1hGKHgjLTKCDUE5o6/JQKk9036/Jts2uP9BF/wNF7SIeqyEDBrTFKP9ruBd2olQ7GRVFOQL9hTt8LYKr98kUwMA/D4QSClqDuRGI/DvBQCoSELkNwIg3yRHAX0i9GNRuWT+QPamnkAUAEAfUiKPo/voKh9mBBDdmrJq1aopDqw2YgdgdYb17NsnoJchq/n2CVidYT379gnoZchqvuGbmG9zPz9w/CYBmoGtyC+UVPbwl4qVQNctIT6zW9H4lqClvXnDv5FeqYko9N++kdRkFZr8tG3V4NssOwN2Bv73DPwESJTKKzgCYj8AAAAASUVORK5CYII="
+            alt="">
+    </div>
+    <div class="xuanran">
+        <!-- <div class="intro">
+            <img src="https://bookcover.yuewen.com/qdbimg/349573/c_23853496209106904/180?h=wkdqad0tgy14" alt="">
+            <div class="right">
+                <h2>重生星际喵喵喵</h2>
+                <p>作者: 单双的单</p>
+                <p>科幻空间/暂无</p>
+                <p>最新: 番外6</p>
+                <p>143万字</p>
+            </div>
+        </div>
+        <div class="read">
+            <div>立即阅读</div>
+        </div>
+        <div class="title">
+            <div class="title-box">
+                <div class="div1">
+                    <i></i>
+                    <h2>查看目录</h2>
+                    <p>已完结</p>
+                </div>
+                <div class="div2">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAZCAYAAAABmx/yAAAAAXNSR0IArs4c6QAAAeNJREFUOBGNk8lKw1AUhpvbCYoVtQsXIs4TiguhsfZdXPoAnbt117nPILjxPawdfAFRwVnBWkFEaEsH/1NyQhJjmsDlJrnnv99/zzlXKhQKm/1+/0wIEU4kEj8Om4+A6GQ4HO72er27crm8bFPnEC6X6xDBrcFgMNVut2v5fH7JjljEYrFrj8cTcjqd36BPY9RAXhwnFhQQjUZvccYQ6F+wPNPpdOo4+4KVWNIu5nK5NViuQ+yHg5YkSXI6nX7UxvD7iMgfyWTyBsEHIJPtAJLWKBaL87yunXVEXqASgVrFmMAmH9gsmEqlnnmdZh2RF+Lx+BWCw0SGOAD7jVKpNMfrNJsSOSCbzW7BbhW2fThzE9mXkciXsUIKyGQy25gqLFZsv1oSSUgPmmIHwnNF/O71eoO2hCRWyJd49YB6aktoRjTNKhH4IZLGZhM0ORKJvFkSOasoiY/qiawGOav/EhVRhUQohU5EbkyF1Dmo3wVEfpBauABq/fgIf6yCtEFFJxE1OtnD1XtiAc86Ihp6nUl8O8xEJFaJypWqgTQJe58YMnr2gQnGeUREA6+ikVUROmPfSkSbCJBWut2uKoLFEOp0byQYv1040xF+BmDNgUTscZ2MgcZv4Xa7j9ENDZBm7Ypok1+m+wfM2SzVOwAAAABJRU5ErkJggg=="
+                        alt="">
+                </div>
+            </div>
+        </div>
+        <div class="title2">
+            <div class="title2-box">
+                <i></i>
+                <h2>内容简介</h2>
+            </div>
+            <div class="content">
+                <p>阮姝不被关心，不被在乎，是家里最不起眼的存在。意外穿越，她成了星际战力最强帝国大元帅的女儿，却是被算计生下的。她以为自己依旧会被嫌弃，因为她好像注定是个万人嫌。但是渐渐的她发现事情好像有什么不对？爸爸的朋友圈渐渐的全是她的照片和视频，哥哥们好像越来越喜欢把她带在身边了。有时候为了抢她家里的男人们甚至还相互打起来了！军部大新闻:“还记得咱们的战斗狂阮元帅吗？今天又
+                </p>
+            </div>
+        </div> -->
+       
+    </div>
+</body>
+<script src="./js/reset.js"></script>
+<script src="./js/detail.js"></script>
+
+</html>

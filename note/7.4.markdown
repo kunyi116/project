@@ -1,0 +1,63 @@
+伪类与伪元素
+    伪类
+        不是真实存在的类，用于向某些选择器添加特殊的效果
+        link        链接
+        visited     访问过
+        hover       鼠标经过
+        active      点击
+        如果在a标签中将以上同时写上，要按照以上先后顺序，即 l v h a 组合使用
+    伪元素
+        不是真实存在的元素 用来添加一些选择器效果
+        before      在元素之前添加
+        after       在元素之后添加
+        focus       获取焦点，一般用于表单元素
+        选择器：：before{
+            content:""(必须加 内容可写可不写 添加的内容写在里面)
+        }
+        选择器：：after{
+            content:""(必须加 内容可写可不写 添加的内容写在里面)
+        }
+        选择器：：focus{
+            //样式属性
+        }
+    display元素
+        规定元素应该生成框的类型
+            值：
+                block
+                    转换为块级元素
+                        独占一行 可以设置宽高
+                none
+                    不显示
+                inline
+                    转换为行内元素
+                        元素会在一行展示 设置宽高无法起作用
+                inline-block
+                    转换为行内块元素
+                        元素既可以设置宽高，又可以在一行展示
+overflow
+    当内容溢出元素边框时 可以设置超出隐藏
+    overflow-x
+    overflow-y
+    值：
+        hidden 内容溢出隐藏
+        scroll 直接加滚动条
+        auto 超出部分增加滚动条 不超过不增加
+list-style
+    列表所展现的样式
+        无序列表
+        有序列表
+            常用 none
+            实心圆 disc
+            空心圆 circle
+            数字标记 decimal......
+写样式先写通配符
+盒模型
+    盒子模型
+        宽高 
+        外边距
+            margin
+             margin:10px 20px 上下为10px 左右为20px
+             margin:10px 20px 30px 上为10px 左右为20px 下为30px
+             margin:10px 20px 30px 40px 顺时针 上右下左 
+        内边距
+        

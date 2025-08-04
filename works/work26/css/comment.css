@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  user-select: none;
+}
+
+.comment-box {
+  width: 700px;
+  height: 155px;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto 0;
+}
+
+.comment-box img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.comment-box .comment {
+  width: 635px;
+  height: 133px;
+  background-color: #f5f5f6;
+  border-radius: 12px;
+}
+
+.comment-box .comment textarea {
+  width: 635px;
+  height: 88px;
+  background-color: #f5f5f6;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 16px 16px 23px;
+  box-sizing: border-box;
+  font: 12px arial;
+}
+
+.comment-box .comment .btn-box {
+  width: 100%;
+  height: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.comment-box .comment .btn-box img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.comment-box .comment .btn-box p {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background: #4e6ef2;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.content {
+  width: 700px;
+  margin: auto;
+  list-style: none;
+}
+
+.content li {
+  width: 700px;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.content li img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 17px;
+}
+
+.content li .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content li .text .name {
+  font-family: PingFangSC-Semibold;
+  font-size: 12px;
+  color: #222;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.content li .text .txt {
+  font: 14px / 22px PingFangSC-Regular;
+  color: #222;
+  width: 635px;
+  text-align: justify;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content li .text .hide {
+  display: none;
+}
+
+.content li .text .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content li .text .bottom p {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.content li .text .bottom .left:hover .del {
+  opacity: 1;
+}
+
+.content li .text .bottom .del {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.content li .text .bottom span {
+  font-size: 13px;
+  color: #9195a3;
+  margin-right: 10px;
+}
+
+.content li .text .bottom .count {
+  display: inline-block;
+  width: 15px;
+  margin-left: 10px;
+  color: red;
+}

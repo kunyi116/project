@@ -1,0 +1,405 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #eee;
+    font: 12px / 1.5 tahoma, '\5FAE\8F6F\96C5\9ED1', sans-serif
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.m-act{
+    width: 820px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.title-box{
+    width: 820px;
+    height: 70px;
+    display: flex;
+}
+.big-title{
+    position: relative;
+    color: #0b0b0b;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 400;
+}
+.big-title p::before{
+    position: absolute;
+    top: 0;
+    left: -10px;
+    content: "";
+    width: 4px;
+    height: 28px;
+    background-color: #1da6ba;
+
+}
+.little-title{
+    position: relative;
+    display: flex;
+    width: 692px;
+    margin-left: 32px;
+    border-bottom: 1px #e0e2e2 solid;
+    box-sizing: border-box;
+}
+.little-title li{
+    width: 68px;
+    margin-right: 40px;
+    color: #676767;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    cursor: pointer;
+}
+/* .little-title li p::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 68px;
+    height: 7px;
+    background-color: #000;
+}  */
+.little-title li:hover{
+    color: #1da6ba;
+    font-weight: 700;
+}
+.more p{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: #7ea1a6;
+}
+.more p:hover{
+    color: #1da6ba;
+    text-decoration:underline;
+}
+.lists-content{
+    display: flex;
+    width: 820px;
+    margin-top: 21px;
+}
+.lists-content :last-child{
+    margin-right: 0;
+}
+.act-item{
+    position: relative;
+    width: 193px;
+    height: 278px;
+    margin-right: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.black-bg{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:193px;
+    height: 207px;
+    background-color: rgba(0,0,0,.6);
+    z-index: 2;
+}
+.item-intro{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:193px;
+    height: 207px;
+    background-image: url(./img/abundent.webp);
+    background-repeat: no-repeat;
+    background-position:2px 2px;
+    text-align: center;
+    z-index: 3;
+}
+.text{
+    margin-top: 80px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.p2{
+    font-size: 12px;
+    color: #9d9c9c;
+    max-height: 73px;
+    overflow: hidden;
+}
+.intro-name{
+    font-size: 16px;
+    font-weight: 400;
+    color: #cdbe91;
+    line-height: 1.5;
+}
+.act-item:hover{
+    transform: translateY(-10px);
+    transition: all 0.5s;
+}
+.act-item:hover .item-name{
+    color: #1da6ba;
+}
+.act-item:hover .black-bg{
+    display: block;
+}
+ .act-item:hover .item-intro{
+    display: block;
+ }
+.act-item img{
+    width: 193px;
+    height: 207px;
+}
+.item-name{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 6px 10px 4px 10px;
+    font-size: 14px;
+    color: #424242;
+    line-height: 18px;
+    text-align: left;
+}
+.act-item a{
+    position: absolute;
+    font-size: 12px;
+    color: #1da6ba;
+    left: 10px;
+    bottom: 6px;
+}
+.icon{
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+    width: 25px !important;
+    height: 25px !important;
+}
+/* 新英雄开始 */
+.new-hero-box{
+    width: 820px;
+    height: 254px;
+    margin-top: 15px;
+}
+.new-hero{
+    display: flex;
+}
+.meier{
+    position: relative;
+    width: 402px;
+    height: 254px;
+    background-image: url(https://img.crawler.qq.com/lolwebschool/0/JAutoCMS_LOLWeb_5c656a58178cbe7e641fd51ca6633d5f/0);
+    margin-right: 15px;
+    cursor: pointer;
+}
+.new-hero :last-child {
+    margin-right: 0;
+}
+.yongen{
+    position: relative;
+    width: 402px;
+    height: 254px;
+    background-image: url(https://img.crawler.qq.com/lolwebschool/0/JAutoCMS_LOLWeb_fd13c1c7d2c055699751798c63089ef9/0);
+    cursor: pointer;
+}
+.yongen:hover .yongen-hoverbox{
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.border{
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    background-position: 0 0;
+    background-image: url(https://game.gtimg.cn/images/lol/v3/index-spr.png);
+    width: 396px;
+    height: 248px;
+    width:396px ;
+    height: 248px;
+    z-index: 3;
+}
+.meier-hoverbox{
+    position: absolute;
+    top: 15px;
+    opacity: 0;
+    z-index: 3;
+}
+.meier:hover .meier-hoverbox{
+    top: 0px;
+    opacity: 1;
+    transition: all 0.5s;
+}
+.meier-black{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 402px;
+    height: 254px;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 2;
+}
+.tip-intro{
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    width: auto;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 2px;
+    font-size: 12px;
+    text-align: center;
+    color: #cdbe91;
+    line-height: 19px;
+    background-color: #000;
+}
+.intro-newskin{
+    width: 100%;
+    padding: 0 17px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 33px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #cdbe91;
+    z-index: 1;
+}
+.intro-content{
+    width: 100%;
+    padding-left: 17px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 12px;
+    font-size: 14px;
+    color: #fff;
+    z-index: 1;
+}
+.line-box{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 402px ;
+    height: 133px;
+    background-image: url(https://game.gtimg.cn/images/lol/v3/pic-mask-0.png);
+    background-repeat: repeat-x;
+    z-index: 0;
+}
+.p3{
+    position: absolute;
+    left: 27px;
+    top: 20px;
+    color: #cdbe91;
+    font-size: 18px;
+    z-index: 3;
+}
+.hover-herf{
+    position: absolute;
+    left: 25px;
+    bottom: 18px;
+    display: block;
+    background-image: url( https://game.gtimg.cn/images/lol/v3/index-spr.png);
+    background-size: 638px 572px;
+    background-repeat: no-repeat;
+    background-position: -401px -179px;
+    width: 154px;
+    height: 42px;
+    color: #ffdb8b;
+    font-size: 14px;
+    text-align: center;
+    line-height: 42px
+}
+.yongen-hoverbox{
+    transform: scale(0);
+    position: absolute;
+    top: -19px;
+    left: -15px;
+    width: 436px;
+    height: 310px;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 4;
+}
+.yongen-img{
+    width: 436px;
+    height: 245px;
+}
+.wenzi{
+    position: relative;
+    margin: 5px 0 10px 15px;
+}
+.p5{
+    font-size: 16px;
+    color: #000;
+}
+.p6{
+    font-size: 14px;
+    color: #68666679;
+}
+.look-more{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    width: 85px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #cdbe91;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.look-more p{
+    font-size: 14px;
+    color: #cdbe91;
+}
+.look-more:hover{
+    background-color: #cdbe91;
+}
+.look-more:hover p{
+    color: #fff;
+}
+.lost-lists{
+    display: flex;
+    margin: 50px 0;
+    width: 1368px;
+    height: 117px;
+}
+.list-content{
+    position: relative;
+    width: 185px;
+    height: 117px;
+    margin-right: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.list-content img:hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+.list-content img{
+    width: 185px;
+    height: 117px;
+}
+
+.list-content p{
+    position: absolute;
+    left: 30px;
+    bottom: 0;
+    color: #cdbe91;
+    font-size: 14px;
+}
+#popup{
+    min-width: 200px; 
+    width: max-content;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+#popup.show {
+    display: block;
+    max-height: 200px; 
+}

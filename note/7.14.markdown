@@ -1,0 +1,62 @@
+animation动画
+    通过@keyframe定义动画
+    在指定元素中 通过animation 属性调用动画
+
+    定义动画
+    keyframes关键帧
+    格式
+        @keyframe 动画名 {
+            from {
+                起始帧
+            }
+            to{
+                结束帧
+            }
+        }
+    百分比定义动画 通过改变百分比使用的数量可以增加执行的帧数
+        @keyframe 动画名 {
+            0%{
+                起始帧
+            }
+            50%{
+                中间帧
+            }
+            100%{
+                结束帧
+            }
+        }
+    调用动画
+        animation:定义的动画名 完成的时间(从起始帧到结束帧的时间) 执行次数  是否反向 运动曲线 延迟执行 是否无限执行
+                                                                        alternate(不反向)
+        分开的属性
+        animation-name 动画名
+        animation-duration 完成时间
+        animation-iteration-count 执行次数 infinite(无限次)
+
+
+flex 弹性布局
+使用弹性布局,必须给元素的父元素添加 display:flex;
+flex-direction 
+    定义元素水平的方向
+    值:
+        row(默认值) 水平从左向右排列
+        row-reverse 水平从右向左排列
+        column 垂直从上到下排列
+        column-reverse 垂直从下到上
+flex-wrap:
+    定义盒子内容是否换行
+        wrap 换行
+        no-wrap 不换行
+        wrap-recerse 首行从最下面开始排列
+justify-content:
+    定义了盒子中内容的对齐方式
+        flex-strat (默认值) 左对齐
+        flex-end 右对齐
+        center 居中对齐
+        space-between 两端对齐
+        space-around 两端等分对齐
+        
+
+
+
+        

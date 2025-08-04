@@ -1,0 +1,49 @@
+ js代码输出
+                1.控制台输出
+                console.log()
+
+                2.警告框输出
+                alert() 页面上弹出一个弹框
+
+                3.页面输出
+                document.write()
+                该方式很少使用 可以让内容输出到页面中
+
+ 
+ js数据类型
+            两大类：
+                基本类型
+                    字符串(String) 
+                        在js中 只要用引号(双引号和单引号)包裹的都是字符串
+
+                    数字(Number)
+                        在js中直接写数字 没有被引号包裹都叫Number
+
+                    布尔值(Boolean)
+                        true  真
+                        false 假
+                        一般用于逻辑判断
+
+                    空值(Null)
+                        null表示空  既是一种数据类型 又是一个值
+
+                    未定义(Undefined)
+                        代表未定义 只有一个值undefined    只做了声明 但是没有赋值
+
+                    NaN(特殊的数字) Not a number(不是一个数字)
+
+
+                    注意：前四种基本类型使用的最多
+
+                引用类型
+                    对象（Object）
+                        数组(Array)
+                        对象(Obj)
+                        函数(Function)
+                        正则(Reg)
+
+
+                判断数据类型 使用typeof()
+                    格式：
+                        var 变量名=值;
+                        console.log(typeof(变量名))

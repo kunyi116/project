@@ -1,0 +1,37 @@
+css
+    属性选择器
+        [属性]{
+            属性名1：属性值
+        }
+css三大特征
+    层叠性
+        css样式可以叠加
+    继承性
+        css可以继承父类元素的样式，或者可以继承祖先元素的样式
+    优先级
+        权重的优先级 决定哪个样式生效
+        权重一致，后写的生效
+文本属性
+    文本缩进属性
+        text-indent
+            首行缩进
+            值：
+                length 用长度来指定文本缩进距离
+                百分比  百分比制定文本缩进值
+    文本对齐
+        text-align
+            设置文本水平对齐方式
+                left
+                center
+                right
+                justify (两端对齐)
+    文本装饰
+        text-decoration
+            设置文本装饰线条
+                none
+                underline
+                overline
+                line-through (贯穿线)
+        cursor:pointer(鼠标经过为小手)
+        word-spacing 调整单词间距
+        letter-spacing 字符之间的间距

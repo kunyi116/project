@@ -1,0 +1,52 @@
+title 中增加网页图标
+    使用link标签 <link rel="icon" src=" 图片路径">
+新标签
+    header 
+        定义了页面的页眉信息
+    footer
+        定义页面的页脚信息
+    nav
+        定义导航链接
+    article
+        定义一块独立的内容 (一般用来存放新闻内容 网站内容 论坛内容)
+    section
+        定义网页中的区块 (对页面进行结构划分)
+    aside
+        内容以外的内容
+    以上标签仅作为了解
+新增 input 属性
+    type属性值  
+        data 可以选择日期(年月日)
+        time 可以选择时间(时 分)
+        month 可以选择月份
+        week 可以选择某年的某一周
+        search 会多一个删除按钮
+        range 可拖动的滑块框 (声音大小 音乐播放器进度条)、
+            value 
+                定义默认值
+            min
+                最小值
+            max
+                最大值
+            step
+                定义最小滑动距离
+            url
+                输入框可以校验 url  网址的合法性 (仅在提交的时候才起作用) 使用 submit 要在form表单中
+            emile
+                输入框可以校验邮箱的合法性 (仅在提交的时候才起作用) 使用 submit 要在form表单中
+            file
+                可以选择上传文件 (仅在提交的时候才起作用) 使用 submit 要在form表单中
+            number
+                输入框只能输入数字
+    新增属性
+        placeholder 设置输入框的提示 使用最多
+        mutiple 可以选择多个
+        require 代表当前输入框为必填框
+        autofocus 自动获取焦点
+        autocomplete 下次是否自动完成(记住上次提交的内容) 如果想让当前效果起作用 要给 input 输入框添加 name 属性
+字体图标
+css3样式属性
+
+
+    
+    

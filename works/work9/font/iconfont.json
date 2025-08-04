@@ -1,0 +1,100 @@
+{
+  "id": "4971862",
+  "name": "kuwo-music",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1185945",
+      "name": "播放",
+      "font_class": "bofang1",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "781701",
+      "name": "last",
+      "font_class": "last",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "781774",
+      "name": "next",
+      "font_class": "next",
+      "unicode": "e718",
+      "unicode_decimal": 59160
+    },
+    {
+      "icon_id": "1913426",
+      "name": "lists",
+      "font_class": "play-lists",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "6776386",
+      "name": "sound",
+      "font_class": "sound",
+      "unicode": "eca5",
+      "unicode_decimal": 60581
+    },
+    {
+      "icon_id": "15074613",
+      "name": "单曲循环",
+      "font_class": "danquxunhuan11",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1092144",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "1638820",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "2076265",
+      "name": "评论",
+      "font_class": "pinglun",
+      "unicode": "e891",
+      "unicode_decimal": 59537
+    },
+    {
+      "icon_id": "2118485",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "6648312",
+      "name": "无损",
+      "font_class": "wusun",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "8371708",
+      "name": "MV",
+      "font_class": "MV",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "12687046",
+      "name": "下载",
+      "font_class": "icon-",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    }
+  ]
+}

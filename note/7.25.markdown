@@ -1,0 +1,49 @@
+作用域就是变量与函数可访问的范围 即作用域控制变量与函数的可见性
+    局部作用域 全局作用域
+    局部作用域：与全局作用域相反 局部作用域只能固定在固定代码片段中可以被访问，最常见的是在函数内部
+    全局作用域：在代码的任何地方都可以访问到对象有用的
+
+
+内置对象
+    Math对象
+        关联数学对象的函数
+            Math.max(num1,num2,num3...)  返回较大值
+            Math.min(num1,num2,num3...)  返回较小值
+            Math.abs(num) 返回绝对值
+            Math.round(num) 四舍五入 只看到小数点后一位 返回的是整数
+            Math.ceil(num) 向上取整 注意正负值
+            Math.floor(num) 向下取整 注意正负值
+            Math.pow(x,y) x的y次方
+            Math.sqrt(num) 开平方
+            Math.PI 代表180弧度
+            Math.sin...cos...
+    Date对象
+        日期对象 日期类型使用UTC(国际协调时间) 自1970年1.1日0时开始 经过的毫秒数保存的时间日期 Date类型里保存的日期能够精确到1970年1.1日之前或之后285616年
+
+        创建日期对象
+            new Date()
+                日期对象方法
+                getTime 将日期对象转化为毫秒数 
+                    var time=new Date().getTime()
+                getTime() 返回某个月中的某一天
+
+                getDay() 返回某一周中的某一天(0-6)
+
+                getData() 返回日
+
+                getMounth() 返回月份(0-11)
+
+                getFullYear() 返回年份
+
+                getHours() 返回小时(0-23)
+
+                getMinutes() 返回分钟数(0-59)
+
+                getseconds() 返回秒数(0-59)
+
+                getMilliseconds() 返回毫秒
+
+                日期格式化
+                    toDateString()
+
+                

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 300px;
+            height: 200px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="discuss">
+        <div class="title">
+            评论<span class="number"></span>
+        </div>
+        <textarea name="" id=""></textarea>
+        <button onclick="send()">发表</button>
+    </div>
+    <ul></ul>
+</body>
+<script>
+    // 数组方法
+    var txt=document.querySelector("textarea")
+    var lists=[]
+    var nikeNames=['张三','李四','王五']
+    var ul=document.querySelector('ul')
+    var send=function() {
+        lists.push({
+            title: txt.value,
+            date: new Date().getHours()+':'+new Date().getMinutes()+":"+new Date().getSeconds(),
+            nikename: nikeNames[Math.floor(Math.random()*nikeNames.length)],
+            bol: false
+        })
+        ul.innerHTML=''
+        lists.forEach(function(item,index) {
+            ul.innerHTML+=`
+                <li>
+                    <p>${item.date}</p>  
+                    <p>${item.title}</p>
+                    <p>${item.nikename}</p>  
+                    <p onclick="like(${item.bol},${index})">赞</p>
+                    <p onclick="del(${index})">删除</p>
+                </li>
+            `
+        })
+        txt.value=''
+    }
+
+    function del(i) {
+        lists.splice(i,1)
+        ul.innerHTML=''
+        lists.forEach(function(item,index) {
+            ul.innerHTML+=`
+                <li>
+                    <p>${item.date}</p>  
+                    <p>${item.title}</p>
+                    <p>${item.nikename}</p>  
+                    <p onclick="like(${item.bol},${index})">赞</p>
+                    <p onclick="del(${index})">删除</p>
+                </li>
+            `
+        })
+    }
+
+    function like(bol,i) {
+        console.log(i)
+        lists[i].bol=!lists[i].bol
+        if(lists[i].bol) {
+            event.target.style.color='red'
+            event.target.innerHTML='赞1'
+        }else {
+            event.target.style.color=''
+            event.target.innerHTML='赞'
+        }
+    }
+
+
+
+
+    // var text=document.querySelector("textarea")
+    // var ul=document.querySelector("ul")
+    // var num=document.querySelector('.number')
+    // var index=0
+    // function send() {
+    //     var date=new Date()
+    //     ul.innerHTML+=`
+    //         <li>
+    //             <p>${date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()}</p>    
+    //             <p>${text.value}</p>
+    //             <span onclick="del()">删除</span>
+    //             <p onclick="add()">赞(<span>0</span>)</p>
+    //         </li>
+    //     `
+    //     text.value=''
+    //     index+=1
+    //     num.innerHTML=index
+    // }
+
+    // function del() {
+    //     event.target.parentNode.remove()
+    //     if(num>0) {
+    //         index-=1
+    //     }else {
+    //         index=''
+    //     }
+        
+    //     num.innerHTML=index
+    // }
+
+    // function add() {
+    //     event.target.children[0].innerHTML=Number(event.target.children[0].innerHTML)+1
+    // }
+</script>
+</html>

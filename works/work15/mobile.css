@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.xiangji{
+    position: absolute;
+    top:4%;
+    left: 4%;
+    width: 2.1rem;
+    height: 2rem;
+    transform: rotateZ(-30deg);
+    z-index: 3;
+}
+.shuye{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    height: 1.6rem;
+    transform: rotateZ(-90deg);
+    z-index: 3;
+}
+@keyframes swing{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+.music{
+    position: fixed;
+    top: 4%;
+    right: 10%;
+    width: 1.85rem;
+    height: 1.85rem;
+    z-index: 3;
+    animation: swing 1s linear infinite;
+}
+.logo-text{
+    position: absolute;
+    top:5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .65rem;
+    color: #fff;
+
+}
+.top-title{
+    position: absolute;
+    display: block;
+    font-family: 楷体;
+    font-size: 4rem;
+    color: #fff;
+    font-weight: bold;
+}
+.xi{
+    top: 19%;
+    left:10%;
+}
+.zang{
+    top: 15%;
+    left:30%;
+}
+.yin{
+    top: 16%;
+    right:30%;
+}
+.xiang{
+    top: 19%;
+    right:14%;
+}
+.little-intro{
+    position: absolute;
+    top: 29%;
+    left: 29%;
+    display: block;
+    width: 5.2rem;
+    font-size: .6rem;
+    color: #fff;
+}
+.publicize{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left:25%;
+    width: 9.05rem;
+    height: 1.5rem;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+.publicize span{
+    font-size: .8rem;
+    color: #007aff;
+    font-weight: bold;
+}
+.baoming{
+    position: absolute;
+    top: 45%;
+    width: 15.5rem;
+    text-align: center;
+}
+.baoming span{
+    color: #fff;
+    font-size: .7rem;
+}
+.bottom-box{
+    position: absolute;
+    bottom: 38%;
+    right: 0;
+    left: 0;
+    text-align: center;
+
+}
+.sj{
+    margin-left: 46%;
+    margin-bottom: 1%;
+    width: 0;
+    height: 0;
+    border-top: .5rem solid #fff;
+    border-right: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+}
+.bottom-box span{
+    font-size: .9rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.big-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17.3rem;
+    height: 30.55rem;
+    background-color: rgba(255, 255, 255, .5);
+}
+.little-bg{
+    width: 14.25rem;
+    height: 28.5rem;
+    background-color: #fff;
+}
+.tu2-box{
+    position: absolute;
+    top: 7rem;
+}
+.tu2-title{
+    position: absolute;
+    top: 4rem;
+    color: #007aff;
+    font-size: .9rem;
+    font-weight: bold;
+}
+.tu2{
+    width: 11.85rem;
+    height: 7.25rem;
+}
+.span-box{
+    position: absolute;
+    bottom: 13rem;
+}
+.text2{
+    display: block;
+    width: 11rem;
+    height:4.5rem ;
+    font-size: .7rem;
+    color:#007aff
+}
+.span-box2{
+    position: absolute;
+    bottom: 16.5rem;
+}
+.famous{
+    color: #306ea4;
+}
+.tu3-box{
+    position: absolute;
+    top: 18rem;
+}
+.span-box3{
+    position: absolute;
+    bottom: 5.5rem;
+}

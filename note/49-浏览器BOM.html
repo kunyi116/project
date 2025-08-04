@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        浏览器BOM
+            window对象
+                是BOM对象最顶层对象
+                包含以下内容：
+                    屏幕尺寸screen
+                    历史记录history
+                    location地址栏
+                    浏览器信息navigator
+
+
+                window对象中的属性
+                    window.history
+                    window.location
+                    window.document
+                    window.screen
+                    window.navigator
+                    window.innerWidth
+                    window.innewHeight
+                    window.name
+                    window.top
+
+                screen对象
+                    包含了客户端显示屏幕的信息
+                    width       屏幕的宽度
+                    height      屏幕的高度
+                    availWidth  屏幕有效宽度
+                    availHeight 屏幕有效高度
+
+                history对象（重要）
+                    包含用户访问过的url
+                    length      history对象中url的历史记录的个数
+                    back()      返回
+                    forward()   前进
+                    go(n)        前进 后退 刷新
+                        n只能写 正整数 或者是 负整数  或者是0
+                        正整数表示 前进
+                        负整数表示 后退
+                        0表示      刷新
+
+                navigator对象
+                    appName
+                    appVersion
+                    appCodeName
+
+                location对象(非常重要)
+                    返回地址栏相关信息
+                    属性：
+                        hash
+                        host
+                        hostname
+                        port
+                        href(重点记)
+                        pathname
+                        search(重点中的重点)
+
+    -->
+    <a href="index.html">跳转首页</a>
+    <a href="detail.html">跳转详情</a>
+    <button onclick="goforward()">前进</button>
+</body>
+<script>
+    console.log(navigator)
+    function goforward() {
+        // console.log(history.length)
+
+        // window.history.forward()
+        // history.go(0)   // 刷新
+        // history.go(1)
+       
+       
+    }
+    // var a='hello'
+    // console.log(a)
+    // console.log(window.a)
+    // alert(1111)
+    // window.alert(222)
+    // console.log(window.history)
+    // console.log(window.innerWidth)
+    // console.log(window.innerHeight)
+
+    // console.log(window.screen.width)
+    // console.log(window.screen.height)
+    // console.log(window.screen.availHeight);
+    // console.log(window.screen.availWidth)
+</script>
+</html>

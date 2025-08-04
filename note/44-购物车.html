@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            display: flex;
+            margin: 20px 0;
+            align-items: center;
+        }
+        .carts {
+            width: 1000px;
+            margin: auto;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+            margin: 0 15px;
+        }
+        .mount {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="carts">
+        <label for="">
+        <input class="all" type="checkbox" oninput="selectAll()">
+            全选/全不选
+        </label>
+        <ul></ul>
+        <div class="total">总价:<span>0.00</span></div>
+    </div>
+</body>
+<script>
+    var all=document.querySelector(".all")
+    var totalPrice=0
+    var arr=[
+        {
+            title:'草莓',
+            price:10,
+            mount:1,
+            img:'https://img1.baidu.com/it/u=489114117,1154697539&fm=253&app=138&f=JPEG?w=500&h=675',
+            bol: false
+        },
+        {
+            title:'苹果',
+            price:5,
+            mount:1,
+            img:'https://img1.baidu.com/it/u=1166014763,1530616878&fm=253&app=138&f=JPEG?w=500&h=500',
+            bol: false
+        },
+        {
+            title:'梨',
+            price:2,
+            mount:1,
+            img:'https://img1.baidu.com/it/u=2193174753,3044436010&fm=253&app=120&f=JPEG?w=800&h=1199',
+            bol: false
+        }
+    ]
+    var ul=document.querySelector("ul")
+    var span=document.querySelector('.total span')
+    
+    function getList() {
+        arr.forEach(function(item,index) {
+            ul.innerHTML+=`
+                <li>
+                    <input class="liIpt" type="checkbox" oninput="changeState(${index})">
+                    <img src="${item.img}">
+                    <p>${item.title}</p>
+                    <p style="margin: 0 15px">${item.price}</p>
+                    <div class="num">
+                        <a onclick="minus(${index})">-</a>
+                        <input class="mount" type="text" value="${item.mount}" oninput="getCount(${index})">
+                        <a onclick="plus(${index})">+</a>    
+                    </div>    
+                    <p style="margin: 0 15px">小计:${item.price*item.mount}</p>
+                    <p onclick="del(${index})">删除</p>
+                </li>
+            `
+        })
+    }
+    getList()
+
+
+    // 修改购物车数量 计算总价
+    function getCount(i) {
+        // console.log(event.target.value)
+        arr[i].mount=event.target.value
+        computPrice()
+    }
+
+
+    // 购物车加减操作
+    function minus(i) {
+        if(arr[i].mount>1) {
+            arr[i].mount-=1
+        }else {
+            arr[i].mount=1
+        }
+
+        ul.innerHTML=''
+        getList()
+        li=document.querySelectorAll(".liIpt")
+        li.forEach(function(item,index) {
+            item.checked=arr[index].bol
+        })
+        computPrice()
+    }
+
+
+    function plus(i) {
+        arr[i].mount+=1
+
+        ul.innerHTML=''
+        getList()
+        li=document.querySelectorAll(".liIpt")
+        li.forEach(function(item,index) {
+            item.checked=arr[index].bol
+        })
+        computPrice()
+    }
+
+    var li=document.querySelectorAll(".liIpt")
+    // 全选全不选
+    function changeState(i) {
+        arr[i].bol=!arr[i].bol
+        var newBol=arr.every(function(item) {
+            return item.bol==true
+        })
+        all.checked=newBol
+        // 计算总价
+        computPrice()
+    }
+
+    function computPrice() {
+        totalPrice=0
+        arr.forEach(function(item) {
+            if(item.bol) {
+                totalPrice+=item.price*item.mount
+            }
+        })
+        span.innerHTML=totalPrice
+    }
+
+    function selectAll() {
+        li.forEach(function(item,index) {
+            if(all.checked) {
+                item.checked=true
+                arr[index].bol=true
+            }else {
+                item.checked=false
+                arr[index].bol=false
+            }
+        })
+
+        computPrice()
+    }
+
+
+    // 删除操作
+    function del(i) {
+        arr.splice(i,1)
+        event.target.parentNode.remove()
+        computPrice()
+
+        ul.innerHTML=''
+        getList()
+        li=document.querySelectorAll(".liIpt")
+        li.forEach(function(item,index) {
+            item.checked=arr[index].bol
+        })
+        if(arr.length==0) {
+            all.checked=false
+        }
+
+        var newBol=arr.every(function(item) {
+            return item.bol==true
+        })
+        all.checked=newBol
+    }
+</script>
+</html>

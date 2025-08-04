@@ -1,0 +1,78 @@
+console.table() 将数组以表格形式输出
+console.time('循环时间')
+循环函数
+console.timeend('循环时间')
+
+
+Bom 操作
+window对象
+    Bom对象最顶层
+        屏幕尺寸 screen
+        历史记录 history
+        地址栏 location
+        浏览器信息 navigator
+
+
+window对象属性
+    window.history
+    window.location
+    window.document
+    window.screen
+    window.navitor
+    window.innerWidth
+    window.innerHeight
+    window.name
+    window.top
+
+    screen对象
+        包含客户端屏幕的信息
+        width 屏幕宽度
+        height 屏幕高度
+        availWidth 屏幕有效宽度
+        availHeight 屏幕有效高度
+     history对象（重要）
+        包含用户访问过的url
+        length      history对象中url的历史记录的个数
+        back()      返回
+        forward()   前进
+        go(n)        前进 后退 刷新
+            n只能写 正整数 或者是 负整数  或者是0
+            正整数表示 前进
+            负整数表示 后退
+            0表示      刷新
+
+                navigator对象
+                    appName
+                    appVersion
+                    appCodeName
+
+                location对象(非常重要)
+                    返回地址栏相关信息
+                    属性：
+                        hash
+                        host
+                        hostname
+                        port
+                        href(重点记)
+                        pathname
+                        search(重点中的重点)
+                获取网址
+                    组成:协议+域名+端口
+                        协议：http https
+                        域名：www.baidu.com
+                        端口：8080 8081 3306
+                    格式：协议://域名:端口
+
+                页面传参
+                    通过页面地址栏进行多页面间的数据传递 
+                        传参方式：问号传参
+                        格式；http://域名？参数名1=参数值1&参数名2=参数值2
+                        如果只有一个参数，则不需要使用& 如果有多个 需要用&连接
+                        可以用window.location.search获取地址中 问号后边的参数和参数值
+
+
+数据请求
+    tab 属性 写在url后面？tab=
+    fetch("url").then(res=>res.json()).then(res1=>{
+        console.log(res1) //res1就是后台返回的数据
+    })

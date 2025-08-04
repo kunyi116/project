@@ -1,0 +1,480 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+        font: 14px / 1.5 Arial, \u601d\u6e90\u5b8b\u4f53, PingFangSC-Regular, \5FAE\8F6F\96C5\9ED1, \5b8b\4f53;
+        color: #000;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.top-dingwei{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 72px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    z-index: 3;
+        .top-box{
+            width: 1160px;
+            height: 72px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+                .left-title{
+                    display: flex;
+                    width: 396px;
+                    justify-content: space-between;
+                    align-items: center;
+                        .logo{
+                            width: 190px;
+                            height: 44px;
+                        }
+                        .heart{
+                            width: 182px;
+                            height: 44px;
+                        }
+                }
+                .right-title{
+                    width: 426px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                        .serch-box{
+                            width: 320px;
+                            height: 36px;
+                            display: flex;
+                            align-items: center;
+                            background-color: #fdd117;
+                            border-radius: 18px;
+                            padding: 2px;
+                            box-sizing: border-box;
+                                input{
+                                    width: 240px;
+                                    height: 32px;
+                                    border-top-left-radius: 19px;
+                                    border-bottom-left-radius: 19px;
+                                    padding: 6px 16px;
+                                    box-sizing: border-box;
+                                    outline: none;
+                                    border: none;
+                                }
+                                span{
+                                    margin-left: 22px;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    font-weight:bold;
+                                }
+                        }
+                        .login-box{
+                            width: 82px;
+                            height: 30px;
+                            display: flex;
+                                img{
+                                    margin-right: 4px;
+                                    width: 22px;
+                                    height: 30px;
+                                    
+                                }
+                                span{
+                                    line-height: 30px;
+                                    color: #222;
+                                }
+                        }
+                }
+        }
+}
+.header-banner{
+    width: 1160px;
+    height: 48px;
+    margin: 72px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+        .left-banner{
+            width: 292px;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+                li{
+                    cursor: pointer;
+                        span{
+                            font-size: 20px;
+                            font-weight: bold;
+                            
+                        }
+                }
+
+        }
+        .right-banner{
+            width: 378px;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+                li{
+                    cursor: pointer;
+                        span{
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+                }
+        }
+}
+.swipper-box{
+    width: 100%;
+    height: 268px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+        .swipper-content{
+            flex: 0 0 100%;
+            position: absolute;
+            height: 268px;
+            opacity: 0;  /* 默认透明 */
+            transition: opacity 0.5s ease; 
+            z-index: -1;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+        }
+        .swipper-content.active {
+            opacity: 1;  /* 当前显示图片不透明 */
+}
+}
+.swipper-indicators {
+    position: absolute;
+    bottom: 38px;  /* 距离底部38px */
+    left: 50%;
+    transform: translateX(-50%);  /* 水平居中 */
+    display: flex;
+    gap: 8px;  /* 指示器间距 */
+}
+
+.swipper-indicator {
+    width: 16px;
+    height: 1px;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, .04);
+    transition: background 0.3s ease;  /* 颜色变化过渡 */
+}
+
+.swipper-indicator.active {
+    background: #fcc800;  /* 当前指示器变为黄色 */
+}
+.center-banner{
+    width: 1160px;
+    height: 263px;
+    margin: -30px auto 0;
+    display: flex;
+    justify-content: space-between;
+        .left-center-banner{
+            width: 674px;
+            height: 263px;
+                .lcb-top{
+                    width: 674px;
+                    height: 136px;
+                    display: flex;
+                    justify-content: space-between;
+                        .lcbt-left-content{
+                            position: relative;
+                            width: 329px;
+                            height: 136px;
+                            background: linear-gradient(180deg,#fff8ea,#fff1d6);
+                            border-radius: 10px;
+                                .zuojia{
+                                    position: absolute;
+                                    top: 20px;
+                                    left: 20px;
+                                    font-size: 24px;
+                                    font-weight: bold;
+                                    color: rgba(82,41,0,.9);
+                                    cursor: pointer;
+                                }
+                                .dianji{
+                                    position: absolute;
+                                    bottom: 20px;
+                                    left: 20px;
+                                    width: 83.5px;
+                                    color: rgba(82,41,0,.9);
+                                    font-size: 16px;
+                                    cursor: pointer;
+                                        i{
+                                            img{
+                                                width: 15px;
+                                                height: 22px;
+                                            }
+                                        }
+                                    
+                                }
+                                .dianji:hover{
+                                    color: #cc6d29;
+                                }
+                                img{
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    width: 120px;
+                                    height: 136px;
+                                }
+                        }
+                }
+                .lcb-bottom{
+                    width: 674px;
+                    height: 111px;
+                    margin-top: 16px;
+                    padding: 16px 20px;
+                    box-sizing: border-box;
+                    border-radius: 8px;
+                    background: #F9F9F9;
+                        ul:last-child{
+                            margin-top: 15px;
+                        }
+                        ul{
+                            position: relative;
+                            width: 634px;
+                            height: 32px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                                .first-item{
+                                    display: flex;
+                                    align-items: center;
+                                    width: 122px;
+                                    height: 26px;
+                                    span{
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                        color: #222;
+                                    }
+                                    img{
+                                        width: 26px;
+                                        height: 26px;
+                                        margin-right: 12px;
+                                    }
+                                }
+                                .first-item::after{
+                                    position: absolute;
+                                    top: 7px;
+                                    left: 123px;
+                                    display: block;
+                                    content: "";
+                                    width: 1px;
+                                    height: 16px;
+                                    background-color: #c8c8c8;
+                                }
+                                li{
+                                    cursor: pointer;
+                                    span{
+                                        font-size: 16px;
+                                        color: #222;
+                                    }
+                                }
+                                li:hover span{
+                                    color: #cc6d29;
+                                }
+                        }
+                }
+        }  
+        .right-center-banner{
+            width: 470px;
+            height: 262px;
+            border-radius:8px;
+            background:#F9F9F9;
+            padding: 6px 20px 16px;
+            box-sizing: border-box;
+                .rcb-title-box:hover h3{
+                    color: #cc6d29;
+                }
+                .rcb-title-box{
+                    width: 110px;
+                    height: 52px;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                        h3{
+                            font-size: 22px;
+                        }
+                        img{
+                            width: 18px;
+                            height: 30px;
+                            margin-left: 4px;
+                        }
+                }
+                ul{
+                    width: 430px;
+                    height: 188px;
+                    padding: 4px 0 0;
+                    box-sizing: border-box;
+                        li:last-child{
+                            margin-bottom: 0px;
+                        }
+                        li:hover .text{
+                            color:#cc6d29
+                        }
+                        li{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 430px;
+                            height: 24px;
+                            margin-bottom: 10px;
+                            cursor: pointer;
+                                .text{
+                                    width: 383px;
+                                    
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    font-size: 14px;
+                                }
+                                .dt{
+                                    font-size: 12px;
+                                    color: #999;
+                                }
+                        }
+                }
+        }
+}
+.ranking-list{
+    width: 1160px;
+    height: 543px;
+    margin: 16px auto 0;
+        .ranking-title:hover h3{
+            color: #cc6d29;
+        }
+        .ranking-title{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+                h3{
+                    font-family: "SourceHanSerifCN-Bold", Source Han Serif SC, Songti SC, serif, SimSun, \5b8b\4f53;
+                    font-weight: bold;
+                    font-size: 22px;
+                    color: #222;
+                }
+                img{
+                    width: 18px;
+                    height: 30px;
+                }
+        }
+        .book-lists{
+            width: 1160px;
+            height: 482px;
+            margin-top: 9px;
+            display: flex;
+            justify-content: space-between;
+                .book-list{
+                    width: 260px;
+                    height: auto;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    background: linear-gradient(180deg, #F5F6F7 0%, #FFFFFF 33%, #FFFFFF 100%);
+                        .mod-th:hover h3{
+                            color: #cc6d29;
+                        }
+                        .mod-th{
+                            height: 62px;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                                h3{
+                                    font-family: "SourceHanSerifCN-Bold", Source Han Serif SC, Songti SC, serif, SimSun, \5b8b\4f53;
+                                    font-weight: bold;
+                                    font-size: 20px;
+                                }
+                                img{
+                                    width: 18px;
+                                    height: 30px;
+                                }
+                        }
+                        .book-content{
+                            width: 240px;
+                            height: auto;
+                                li{
+                                    cursor: pointer;
+                                    margin-bottom: 10px;
+                                }
+                                .before:hover .book-img{
+                                    display: block;
+                                }
+                                .before:hover .author{
+                                    display: block;
+                                }
+                                .before:hover .redu{
+                                    display: block;
+                                }
+                                .before:hover{
+                                    display: flex;
+                                    align-items: start;
+                                }
+                                .before{
+                                    width: 240px;
+                                    height: auto;
+                                    display: flex;
+                                    align-items: center;
+                                        .pm{
+                                            width: 24px;
+                                            height: 24px;
+                                            margin-right: 4px;
+                                            p{
+                                                width: 24px;
+                                                text-align: center;
+                                                font-weight: bold;
+                                                color: #666;
+                                                font-size: 14px;
+                                            }
+                                            
+                                        }
+                                        .book-title:hover{
+                                            color: #cc6d29;
+                                        }
+                                        .book-title{
+                                            // overflow: hidden;
+                                            // text-overflow: ellipsis;
+                                            // white-space: nowrap;
+                                            color: #222;
+                                        }
+                                        .author:hover{
+                                            color: #cc6d29;
+                                        }
+                                        .author{
+                                            display: none;
+                                            margin-top: 4px;
+                                            font-size: 12px;
+                                            color: #999;
+                                        }
+                                        .redu{
+                                            display: none;
+                                            color: #fca000;
+                                            margin-top: 12px;
+                                                em{
+                                                    font-size: 11px;
+                                                    font-style: normal;
+                                                }
+                                        }
+                                        .book-img{
+                                            display: none;
+                                            width: 75px;
+                                            height: 98px;
+                                        }
+                                }
+                            
+                        }
+                }
+        }
+}

@@ -1,0 +1,10 @@
+两端对齐
+    在其父元素中添加
+    display:flex;
+    justify-content:space-between;
+一张大图如何定位到里面的一张小图
+    background-positioon: 0 0    (用F12定位进行调试)
+定位后水平垂直方向居中
+    left:50%;
+    top:50%;
+    tranform:translate(-50%,-50%)

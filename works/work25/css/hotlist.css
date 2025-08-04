@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.hot {
+  width: 369px;
+  margin: auto;
+}
+
+.title-box {
+  display: flex;
+  width: 369px;
+  height: 22px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.left-title {
+  display: flex;
+  align-items: center;
+}
+
+.left-title img {
+  width: 14px;
+  height: 16px;
+}
+
+.left-title p {
+  font-size: 16px;
+  color: #222;
+  font-weight: bold;
+}
+
+.left-title p:hover {
+  color: #2440b3;
+  cursor: pointer;
+}
+
+.right-title {
+  display: flex;
+  align-items: center;
+}
+
+.right-title img {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  transition: all 0.3s linear;
+}
+
+.right-title p {
+  font-size: 13px;
+  color: #626675;
+  line-height: 13px;
+}
+
+.right-title p:hover {
+  color: #2440b3;
+  cursor: pointer;
+}
+
+.title-list {
+  width: 368px;
+  height: 28px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-list li {
+  color: #2440B3;
+  font-weight: 500;
+  background: #F5F6F9;
+  width: 80px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.title-list li:hover {
+  background: rgba(49, 94, 251, 0.1);
+  cursor: pointer;
+}
+
+.title-list .active {
+  color: #315EFB;
+  background: rgba(49, 94, 251, 0.1);
+}
+
+.hide {
+  display: none;
+}
+
+.list-one li {
+  height: 32px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.list-one li span {
+  display: inline-block;
+  text-align: center;
+}
+
+.list-one li .number {
+  width: 18px;
+  height: 22px;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.list-one li .number img {
+  width: 16px;
+  height: 17px;
+  display: block;
+}
+
+.list-one li .number1 {
+  color: #FE2D46;
+}
+
+.list-one li .number2 {
+  color: #ff6600;
+}
+
+.list-one li .number3 {
+  color: #faa90e;
+}
+
+.list-one li .number4 {
+  color: #9195a3;
+}
+
+.list-one li .text {
+  color: #2440b3;
+  font: 14px Arial,sans-serif;
+  cursor: pointer;
+}
+
+.list-one li .text:hover {
+  text-decoration: underline;
+  color: #315EFB;
+}
+
+.list-two li {
+  height: 32px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.list-two li span {
+  display: inline-block;
+  text-align: center;
+}
+
+.list-two li .number {
+  width: 18px;
+  height: 22px;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.list-two li .number img {
+  width: 16px;
+  height: 17px;
+  display: block;
+}
+
+.list-two li .number1 {
+  color: #FE2D46;
+}
+
+.list-two li .number2 {
+  color: #ff6600;
+}
+
+.list-two li .number3 {
+  color: #faa90e;
+}
+
+.list-two li .number4 {
+  color: #9195a3;
+}
+
+.list-two li .text {
+  color: #2440b3;
+  font: 14px Arial,sans-serif;
+  cursor: pointer;
+}
+
+.list-two li .text:hover {
+  text-decoration: underline;
+  color: #315EFB;
+}
+
+.zheng-list li {
+  height: 32px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.zheng-list li span {
+  display: inline-block;
+  text-align: center;
+}
+
+.zheng-list li .number {
+  width: 18px;
+  height: 22px;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.zheng-list li .number img {
+  width: 16px;
+  height: 17px;
+  display: block;
+}
+
+.zheng-list li .number1 {
+  color: #FE2D46;
+}
+
+.zheng-list li .number2 {
+  color: #ff6600;
+}
+
+.zheng-list li .number3 {
+  color: #faa90e;
+}
+
+.zheng-list li .number4 {
+  color: #9195a3;
+}
+
+.zheng-list li .text {
+  color: #2440b3;
+  font: 14px Arial,sans-serif;
+  cursor: pointer;
+}
+
+.zheng-list li .text:hover {
+  text-decoration: underline;
+  color: #315EFB;
+}

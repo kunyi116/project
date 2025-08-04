@@ -1,0 +1,4 @@
+移动端页面不允许用户双击缩放
+    在meta标签中添加 user-scalable=no
+
+swiper3中文网

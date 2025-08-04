@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            width: 1150px;
+            margin: auto;
+            list-style: none;
+        }
+        .checkList {
+            display: flex;
+        }
+        .checkList li {
+            width: 160px;
+            &:first-child {
+                width: 50px;
+            }
+        }
+        input[type="checkbox"] {
+            position: relative;
+            margin-right: 10px;
+        }
+        input[type="checkbox"]::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background-image: url("img/select.png");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color: #fff;
+        }
+        input[type="checkbox"]:checked::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background-image: url("img/selected.png");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color: #fff;
+        }
+        .list {
+            display: flex;
+            margin-bottom: 30px;
+            img {
+                width: 200px;
+            }
+        }
+        .lists {
+            width: 1150px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <ul class="checkList">
+        <li>
+            <p>房型</p>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" oninput="getTxt()" value="一室" class="type">一室
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" oninput="getTxt()" value="二室" class="type">二室
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" oninput="getTxt()" value="三室" class="type">三室
+            </label>
+        </li>
+    </ul>
+    <ul class="checkList">
+        <li>
+            <p>朝向</p>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" class="direction" oninput="getTxt()" value="朝南">朝南
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" class="direction" oninput="getTxt()" value="朝东">朝东
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" class="direction" oninput="getTxt()" value="朝西">朝西
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" class="direction" oninput="getTxt()" value="朝北">朝北
+            </label>
+        </li>
+    </ul>
+    <ul class="checkList">
+        <li>
+            <p>房型</p>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">一室
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">二室
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox">三室
+            </label>
+        </li>
+    </ul>
+    <button onclick="priceSort()">价格排序</button>
+    <div class="lists">
+        
+    </div>
+
+</body>
+<script>
+var newArr=[]
+var houses=[
+    {   
+
+        'id':1,
+        'derction':'朝北',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_k5psqXvOm.jpg.296x216.jpg',
+        'title':'悦湖会1楼带院适合低楼层客户，小院有20平方左右',
+        'size':'三室',
+        'height':'低楼层',
+        'area':108,
+        'price':4717,
+        'total':51
+    },
+    {
+        'id':2,
+        'derction':'朝东',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_VwLIWB8AY_1.jpg.296x216.jpg',
+        'title':'满五年，无贷款，通透户型，产权清晰',
+        'size':'三室',
+        'height':'中楼层',
+        'area':125,
+        'price':6383,
+        'total':80
+    },
+    {
+        'id':3,
+        'derction':'朝北',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_L6J7Tfm8c_1.jpg.296x216.jpg',
+        'title':'建业两房精装修  双气地暖 诚心出售 好楼层 采光很美',
+        'size':'二室',
+        'height':'低楼层',
+        'area':91,
+        'price':6881,
+        'total':63
+    },
+    {
+        'id':4,
+        'derction':'朝南',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_lXGgsYyNY_1.jpg.296x216.jpg',
+        'title':'绿地澜庭2期  122平 精装拎包入住，业主诚心出售',
+        'size':'三室',
+        'height':'低楼层',
+        'area':108,
+        'price':10463,
+        'total':128
+    },
+    {
+        'id':5,
+        'derction':'朝东',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_Rr1Eg6fqV_1.jpg.296x216.jpg',
+        'title':'金二环5、2、6号线三地铁，三室，低楼层',
+        'size':'三室',
+        'height':'高楼层',
+        'area':90,
+        'price':11420,
+        'total':103
+    },
+    {
+        'id':6,
+        'derction':'朝西',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_vwOOuR8vO.jpg.296x216.jpg',
+        'title':'阳光城5号院 双气地铁口 人车分流 中楼层 采光视野好',
+        'size':'一室',
+        'height':'高楼层',
+        'area':60,
+        'price':5017,
+        'total':30
+    },
+    {
+        'id':7,
+        'derction':'朝南',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_DBGcCxzY0.jpg.296x216.jpg',
+        'title':'幸福里，不临街，不临路，精装电梯洋房四室，没住过人',
+        'size':'二室',
+        'height':'低楼层',
+        'area':145,
+        'price':8600,
+        'total':125
+    },
+    {
+        'id':8,
+        'derction':'朝北',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_cchMPd1JK.jpg.296x216.jpg',
+        'title':'中间楼层 无个税 诚心出售 价格可谈',
+        'size':'一室',
+        'height':'低楼层',
+        'area':75,
+        'price':11000,
+        'total':85
+    },
+    {
+        'id':9,
+        'derction':'朝西',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_zaR7h85Nm_1.jpg.296x216.jpg',
+        'title':'梧桐苑洋房边户，业主名下唯一住房满两年税费低！',
+        'size':'三室',
+        'height':'低楼层',
+        'area':108,
+        'price':16000,
+        'total':236
+    },
+    {
+        'id':10,
+        'derction':'朝北',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_YFiFp0JnD.jpg.296x216.jpg',
+        'title':'国龙绿城怡园一期 3室2厅 东',
+        'size':'三室',
+        'height':'高楼层',
+        'area':137,
+        'price':12000,
+        'total':175
+    },
+    {
+        'id':11,
+        'derction':'朝西',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_ArW4ImRGI_1.jpg.296x216.jpg',
+        'title':'永威物业，高层，花园环境小区。',
+        'size':'一室',
+        'height':'低楼层',
+        'area':79,
+        'price':4717,
+        'total':38
+    },
+    {
+        'id':12,
+        'derction':'朝西',
+        'img':'https://image1.ljcdn.com/110000-inspection/pc1_xeuJvmtSO_1.jpg.296x216.jpg',
+        'title':'小区前排，精装双气地暖，央中空调，河景房，诚心卖',
+        'size':'三室',
+        'height':'中楼层',
+        'area':108,
+        'price':12000,
+        'total':108
+    },
+]
+var lists=document.querySelector(".lists")
+
+function priceSort() {
+    if(newArr.length==0) {
+        houses=houses.sort(function(a,b) {
+            return a.price-b.price
+        })
+        lists.innerHTML=''
+        getList()
+    }else {
+        newArr=newArr.sort(function(a,b) {
+            return a.price-b.price
+        })
+        lists.innerHTML=''
+        newArr.forEach(function(item) {
+            lists.innerHTML+=`
+                <div class="list">
+                    <img src="${item.img}" alt="">
+                    <div style="width:700px; margin-left: 20px;">
+                        <p>${item.title}</p>
+                        <p>${item.size} | ${item.derction} | ${item.height}</p>
+                    </div>
+                    <div>
+                        <p>${item.total}万</p>
+                        <p>${item.price}元/平</p>
+                    </div>
+                </div>
+            `
+        })
+    }
+    
+}
+
+
+// 渲染列表
+function getList() {
+    houses.forEach(function(item) {
+        lists.innerHTML+=`
+            <div class="list">
+                <img src="${item.img}" alt="">
+                <div style="width:700px; margin-left: 20px;">
+                    <p>${item.title}</p>
+                    <p>${item.size} | ${item.derction} | ${item.height}</p>
+                </div>
+                <div>
+                    <p>${item.total}万</p>
+                    <p>${item.price}元/平</p>
+                </div>
+            </div>
+        `
+    })
+}
+getList()
+
+var houseType=[]
+var directions=[]
+function getTxt() {
+    console.log(event.target.getAttribute('class'))
+    lists.innerHTML=''
+    if(event.target.checked) {
+        if(event.target.getAttribute('class')=='type') {
+            houseType.push(event.target.value)
+        }else if(event.target.getAttribute('class')=='direction') {
+            directions.push(event.target.value)
+        }
+    }else {
+        if(event.target.getAttribute('class')=='type') {
+            houseType.forEach(function(item,index) {
+                if(event.target.value==item) {
+                    houseType.splice(index,1)
+                    if(houseType.length==0 && directions.length==0) {
+                        getList()
+                    }
+                }
+            })
+        }else if(event.target.getAttribute('class')=='direction') {
+            directions.forEach(function(item,index) {
+                if(event.target.value==item) {
+                    directions.splice(index,1)
+                    if(houseType.length==0 && directions.length==0) {
+                        getList()
+                    }
+                }
+            })
+        }
+        
+    }
+    newArr=[]
+    houses.forEach(function(item) {
+        if(item.size==houseType[0]||item.size==houseType[1]||item.size==houseType[2]) {
+            if(directions.length==0) {
+                newArr.push(item)
+                lists.innerHTML+=`
+                    <div class="list">
+                        <img src="${item.img}" alt="">
+                        <div style="width:700px; margin-left: 20px;">
+                            <p>${item.title}</p>
+                            <p>${item.size} | ${item.derction} | ${item.height}</p>
+                        </div>
+                        <div>
+                            <p>${item.total}万</p>
+                            <p>${item.price}元/平</p>
+                        </div>
+                    </div>
+                `
+            }else {
+                if(item.derction==directions[0]||item.derction==directions[1]||item.derction==directions[2]||item.derction==directions[3]) {
+                    newArr.push(item)
+                    lists.innerHTML+=`
+                        <div class="list">
+                            <img src="${item.img}" alt="">
+                            <div style="width:700px; margin-left: 20px;">
+                                <p>${item.title}</p>
+                                <p>${item.size} | ${item.derction} | ${item.height}</p>
+                            </div>
+                            <div>
+                                <p>${item.total}万</p>
+                                <p>${item.price}元/平</p>
+                            </div>
+                        </div>
+                    `
+                }
+            }
+        }else if(item.derction==directions[0]||item.derction==directions[1]||item.derction==directions[2]||item.derction==directions[3]) {
+            if(houseType.length==0) {
+                newArr.push(item)
+                lists.innerHTML+=`
+                    <div class="list">
+                        <img src="${item.img}" alt="">
+                        <div style="width:700px; margin-left: 20px;">
+                            <p>${item.title}</p>
+                            <p>${item.size} | ${item.derction} | ${item.height}</p>
+                        </div>
+                        <div>
+                            <p>${item.total}万</p>
+                            <p>${item.price}元/平</p>
+                        </div>
+                    </div>
+                `
+            }
+        }
+    })
+}
+</script>
+</html>

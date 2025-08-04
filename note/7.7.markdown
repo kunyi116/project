@@ -1,0 +1,22 @@
+文本溢出显示小圆点
+    overflow:hidden;
+    display:-webkit-box;
+    -webkit-line-clamp:1;(超出几行隐藏)
+    text-overflow:ellipsis
+定位
+    position
+        relative
+            相对定位。元素相对于其正常位置
+        absolute
+            绝对定位。元素的位置是相对于最近的已定位的父元素
+        fixed
+            固定定位。元素的位置相对于浏览器窗口进行定位
+        sticky
+            粘性定位。基于用户滚动位置来定位 依赖于用户滚动 介于relative与fixed之间的一种定位，简单来是吸顶定位，通常用来给顶部导航栏进行定位
+层级
+    z-index
+        值可以是任意整数或者是零    值越大 层级越高，此数据只对定位起作用。
+flex-wrap:wrap；
+    一行放不下自动换行
+opacity:.4
+    透明度为0.4

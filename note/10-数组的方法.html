@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        数组方法
+            push
+                给数组末尾添加元素
+                数组.push(元素1,元素2,...)
+
+            pop
+                从数组末尾删除一个元素
+                数组.pop()
+
+            shift
+                从数组的第一位删除元素
+                数组.shift()
+
+            unshift
+                在数组的第一位添加元素
+                数组.unshift(元素)
+
+            concat
+                合并数组
+                数组.concat(新数组)
+
+            slice
+                截取数组 生成新数组
+                数组.slice(起始,结束)
+                起始表示 开始元素的下标索引 
+                结束表示 结束元素的下标索引 但是不包含当前元素
+
+                数组.slice(起始)
+                从起始位置截取到最后
+
+            splice
+                删除或者替换数组中的某一个
+
+                删除：
+                    数组.splice(start,length)
+                    start表示起始元素的下标索引
+                    length表示从当前索引往后长度
+
+                替换
+                    数组.splice(start,length,新的元素)
+
+            split()
+                将字符串中的元素 以某种形式分割成数组
+            join
+                将数组中的元素 有某种形式拼接成字符串
+                数组.join(字符串)
+
+            reverse
+                反转数组
+                数组.reverse()
+
+            sort
+                对数组进行排序
+                数组.sort()   默认是从小到大排序
+
+                如果使用sort对数字直接排序 只能对十以内的数字正常排序 超过10的数值不能正常排序
+
+
+            indexOf
+                查找数组中元素出现的下标索引  元素第一次出现下标索引
+                如果没有找到元素 则返回-1  如果找到就返回对应的下标索引
+                数组.indexOf(元素)
+
+            forEach
+                循环遍历数组
+                数组.forEach(function(item,index,arr) {
+                    // item 表示数组的每一项
+                    // index 表示数组的下标索引
+                    // arr 表示原数组
+                    // 以上三个都是形参 而且三个参数不是需要全部都写 可以根据自身的需求 选择写一个或者是多个参数
+                })
+    -->
+    <!-- <button onclick="add()">添加购物车</button>
+    <ul>
+
+    </ul> -->
+    <!-- <ul>
+
+    </ul> -->
+    <!-- <button onclick="del()">删除</button> -->
+</body>
+<script>
+
+    // var sorts=[7,121,26,104,7]
+    // sorts.forEach(function(item, index, arr) {
+    //     console.log(item, index, arr)
+    // })
+
+    // console.log(sorts.indexOf(7))
+
+    // sorts=sorts.sort().reverse()
+    // console.log(sorts)
+
+    // sorts=sorts.sort(function(a,b) {
+    //     return a-b
+    // })
+    // console.log(sorts)
+
+    // var ul=document.querySelector('ul')
+    // for(var i=0; i<list.length; i++) {
+    //     ul.innerHTML+=`
+    //         <li>
+    //             <img src="${list[i].listPictureUrl}">
+    //             <p>${list[i].title}</p>    
+    //             <span>${list[i].desc}</span>
+    //         </li>
+    //     `
+
+    // }
+    // var arr1=[1,2,3,4,5,6]  // [2,3,4]
+
+    // arr1=arr1.join("---")
+    // arr1=arr1.reverse()
+    // console.log(arr1)
+
+
+    // var sorts=['区域','价格','房型']
+    // sorts.splice(1,1,'60-80万')
+
+    // arr1.splice(2,2)  // [1,2,5,6]
+    // console.log(arr1)
+
+    // arr1.splice(2,1,'hello')  // [1,2,'hello',4,5,6]
+    // console.log(arr1)
+
+
+    // arr1=arr1.slice(1,4) // [2,3,4]
+    // arr1=arr1.slice(3)
+    // console.log(arr1)   
+    // var arr1=[1,2]
+    // var arr2=[3,4]
+    // arr2.push(...arr1)
+    // console.log(arr2)
+
+    // arr2=arr2.concat(arr1)
+    // console.log(arr2)
+
+    // var arr=[1,2]
+    // arr.push(3)
+    // arr.push('hello','world')
+    // console.log(arr)
+
+    
+    // function del() {
+    //     // arr.pop()
+    //     // arr.shift()
+    //     arr.unshift('你好')
+    //     console.log(arr)
+    // }
+   
+
+    // var ul=document.querySelector('ul')
+    // var carts=[]
+    // function add() {
+    //     carts.push('手机')
+    //     for(var i=0; i<carts.length; i++) {
+    //         ul.innerHTML+=`
+    //             <li>${carts[i]}</li>
+    //         `
+    //     }
+    // }
+    
+</script>
+</html>

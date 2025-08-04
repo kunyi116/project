@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: auto;
+            text-align: center;
+        }
+
+        table img{
+            width: 25px;
+        }
+        .register{
+            width: 350px;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: beige;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" rules="all" width="800" height="350">
+        <tr style="background-color: antiquewhite;">
+            <td>班次名称</td>
+            <td>科目</td>
+            <td>授课内容</td>
+            <td>增值服务</td>
+            <td>课时</td>
+            <td>价格</td>
+            <td>试听</td>
+            <td>购买</td>
+        </tr>
+        <tr>
+            <td rowspan="3">真题精解班</td>
+            <td>行测+申论</td>
+            <td>全科历年真题精解</td>
+            <td rowspan="3">课后赠2套模拟卷<br>24小时以内答疑</td>
+            <td>48</td>
+            <td style="color: red;">1280元</td>
+            <td><img src="./img/1.png" alt=""></td>
+            <td><img src="./img/2.png" alt=""></td>
+        </tr>
+        <tr>
+            
+            <td>行测</td>
+            <td>行测历年真题讲解</td>
+            
+            <td>32</td>
+            <td>980元</td>
+            <td><img src="./img/1.png" alt=""></td>
+            <td><img src="./img/2.png" alt=""></td>
+        </tr>
+        <tr>
+            
+            <td>申论</td>
+            <td>申论历年真题讲解</td>
+            
+            <td>16</td>
+            <td>580元</td>
+            <td><img src="./img/1.png" alt=""></td>
+            <td><img src="./img/2.png" alt=""></td>
+        </tr>
+        <tr>
+            <td rowspan="3">高分技巧班</td>
+            <td>行测+申论</td>
+            <td>全科技巧强化</td>
+            <td rowspan="3">入学试卷测评<br>24小时内答疑</td>
+            <td>32</td>
+            <td style="color: red;">980元</td>
+            <td><img src="./img/1.png" alt=""></td>
+            <td><img src="./img/2.png" alt=""></td>
+        </tr>
+        <tr>
+            <td>行测</td>
+            <td>行测速解技巧强化</td>
+            <td>18</td>
+            <td>680元</td>
+            <td><img src="./img/1.png" alt=""></td>
+            <td><img src="./img/2.png" alt=""></td>
+        </tr>
+        <tr>
+            <td>申论</td>
+            <td>申论速解技巧强化</td>
+            <td>14</td>
+            <td>580元</td>
+            <td><img src="./img/1.png" alt=""></td>
+            <td><img src="./img/2.png" alt=""></td>
+        </tr>
+    </table>
+        <form class="register">
+        电子邮箱：<input type="text" placeholder="请输入你的电子邮箱"><br>
+        设置密码：<input type="password" placeholder="请设置你的密码"><br>
+        真实姓名：<input type="text" placeholder="请输入你的真实姓名"><br>
+        性别：<label><input type="radio" name="sex">男</label>
+              <label><input type="radio" name="sex">女</label><br>
+        生日：
+            <label> 
+                <select id="year" name="year"></select>
+                <select id="month" name="month"></select>
+                <select id="day" name="day"></select>
+            </label>
+            <div class="why"><a href=""><span style="color: blue;">为什么要填写我的生日？</span></a></div>
+        我现在：
+            <label>
+                <select >
+                    <option value="" disabled selected>请选择身份</option>
+                    <option value="">教师</option>
+                    <option value="">在校大学生</option>
+                    <option value="">开发人员</option>
+                </select>
+            </label> <span>(非常重要)</span>
+            <br>
+        验证码：<input type="text" maxlength="4"><br>
+        <img width="50px" src="./img/figure.png" alt="验证码">
+        <a href=""><span style="color: blue;">看不清楚换一张?</span></a><br>
+        <input type="button" style="width: 88px;" value="注册">
+    </form>
+    <script>
+        const yearSelect = document.getElementById('year');
+        const currentYear = new Date().getFullYear();
+        for (let year = currentYear; year >= 1900; year--) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            yearSelect.appendChild(option);
+        }
+        const monthSelect = document.getElementById('month');
+        for (let month = 1; month <= 12; month++) {
+            const option = document.createElement('option');
+            option.value = month;
+            option.textContent = month + '月';
+            monthSelect.appendChild(option);
+        }
+        function updateDays() {
+            const daySelect = document.getElementById('day');
+            const year = yearSelect.value;
+            const month = monthSelect.value;
+            daySelect.innerHTML = '<option value="">-- 请选择 --</option>';
+            if (year && month) {
+            const daysInMonth = new Date(year, month, 0).getDate();
+            for (let day = 1; day <= daysInMonth; day++) {
+                const option = document.createElement('option');
+                option.value = day;
+                option.textContent = day;
+                daySelect.appendChild(option);
+            }
+            }
+        }
+        yearSelect.addEventListener('change', updateDays);
+        monthSelect.addEventListener('change', updateDays);
+    </script>
+</body>
+</html>

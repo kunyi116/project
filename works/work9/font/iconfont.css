@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4971862 */
+  src: url('iconfont.woff2?t=1752135486213') format('woff2'),
+       url('iconfont.woff?t=1752135486213') format('woff'),
+       url('iconfont.ttf?t=1752135486213') format('truetype'),
+       url('iconfont.svg?t=1752135486213#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bofang1:before {
+  content: "\e606";
+}
+
+.icon-last:before {
+  content: "\e6e1";
+}
+
+.icon-next:before {
+  content: "\e718";
+}
+
+.icon-play-lists:before {
+  content: "\e613";
+}
+
+.icon-sound:before {
+  content: "\eca5";
+}
+
+.icon-danquxunhuan11:before {
+  content: "\e600";
+}
+
+.icon-jiahao:before {
+  content: "\e62f";
+}
+
+.icon-aixin:before {
+  content: "\e61f";
+}
+
+.icon-pinglun:before {
+  content: "\e891";
+}
+
+.icon-bofang:before {
+  content: "\e654";
+}
+
+.icon-wusun:before {
+  content: "\e603";
+}
+
+.icon-MV:before {
+  content: "\e62c";
+}
+
+.icon-icon-:before {
+  content: "\e658";
+}
+

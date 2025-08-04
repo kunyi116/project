@@ -1,0 +1,65 @@
+background新增属性
+    background-size
+        cover 会自动调整比例 保证图片填满盒子，如果有溢出，会被隐藏，保证图片完整覆盖盒子，但是不能保证图片完整性
+        contain 会自动调整比例 保证图片能始终完整显示在背景区域 但是不能保证铺满盒子
+    background-origin
+        padding-box 内边距开始显示背景图
+        border-box 边框开始显示背景图 边框部分也会显示
+        content-box 内容区域开始显示背景图
+    background-clip 背景裁剪
+        border-box 超出此部分被裁剪
+        padding-box 超出此部分被裁剪
+        content-box 超出此部分被裁剪
+    同时设置多个背景如何实现
+        background: color url() repeat position/size
+    设置背景图是否随着页面滚动或固定
+        background-attachment
+            值
+                fixed 页面滚动时背景固定不动
+                scorll 默认值 随着页面滚动一起滚动
+    渐变
+        background-image
+            线性渐变：沿着某条直线朝着一个方向进行渐变效果
+            linear-gradient
+            格式：background-image：linear-gradient(方向，起始颜色 百分比用来控制从多少开始渐变，中间颜色，.....，结束颜色)
+            径向渐变：从一个中心点开始向四周进行传播
+            格式：background-image：radiol-gradient(辐射半径大小,中心位置，起始颜色，中间颜色.....,结束颜色 )
+动画效果
+    2D转换：元素的平移，旋转，变形，缩放
+    通过tranform实现
+    要实现多种动画效果叠加，要使用复合属性 tranform:scale(x,y) translate(水平位移，垂直位移)...
+        2D转换：
+            缩放
+            scale
+                transform:scale(x,y)
+                x表示水平方向的缩放倍数
+                y表示垂直方向的缩放倍数
+                如果只写一个值，表示等比例缩放
+                1 表示不放大，不缩小
+                值不能写负数与百分比，可以写成小数
+        transition 只对数字起作用
+            从无到有可以用 opacity 透明度从全透到不透 以及缩放结核实现
+
+            移动
+            translate
+                tranform:tranlate(水平位移，垂直位移)
+                tranform:tranlateX 只控制水平方向 
+                tranform:tranlateY 只控制垂直方向
+                    值可以为负数和百分比
+
+            旋转
+            rotate
+                tranform:rotate(角度)
+                    单位为 deg 
+                    正值顺时针旋转
+                    负值逆时针旋转
+            
+            倾斜
+            skew
+            tranform:skew(水平倾斜角度，垂直倾斜角度)
+                单位为 deg 
+                正值
+                负值
+
+
+

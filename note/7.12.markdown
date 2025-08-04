@@ -1,0 +1,35 @@
+3D转换
+    旋转
+        rotateX 绕X轴旋转
+        rotateY 绕Y轴旋转
+        rotateZ 绕Z轴旋转
+        backface-visibility
+        rotate3d(x,y,z,a) 里面的x y z 只能填写0或者1，0表示旋转，1表示不旋转，a表示旋转的角度 数字 
+    移动
+        translateX 沿着X轴平移
+        translateY 沿着Y轴平移
+        translateZ 沿着Z轴平移
+        translate3d(x,y,z) 里面填写数字＋ px
+    body{
+        perspective:500px;
+    }
+    给元素添加透视效果，在写3D效果时要添加合适的视距
+    添加该属性效果时，要给这个元素的父元素添加
+    transform-style :preserve;
+transition
+    过渡效果 只对数字起作用
+        实现元素不同状态之间的平滑过渡，经常用来制作动画效果
+            transition: 过渡属性 完成时间(s) 运动曲线 延迟时间
+            
+            拆开
+                transition-property         过渡属性
+                transition-duration         完成时间
+                transition-timing-function  运动曲线
+                    linear  线性
+                    ease   慢慢减速(默认值)
+                    ease-in 加速
+                    ease-out 减速
+                    ease-in-out 先加速，后减速
+                transition-delay            延迟时间
+
+

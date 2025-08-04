@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input placeholder="输入你的时间" type="text"> -->
+</body>
+<!--第一题-->
+<script>
+    var arr=['0','1','2','3','4','5','6','7','8','8','a','b','c','d','e','f']
+    function col(){
+        var col1=Math.floor(Math.random()*arr.length)
+        var col2=Math.floor(Math.random()*arr.length)
+        var col3=Math.floor(Math.random()*arr.length)
+        var col4=Math.floor(Math.random()*arr.length)
+        var col5=Math.floor(Math.random()*arr.length)
+        var col6=Math.floor(Math.random()*arr.length)
+        console.log('#'+arr[col1]+arr[col2]+arr[col3]+arr[col4]+arr[col5]+arr[col6])
+    }
+    col()
+</script>
+<!--第二题-->
+<script>
+    var n=20
+    function calcTime(){
+        var time=new Date().getTime()
+        var time1=new Date(time+n*24*3600*1000)
+        console.log(time1.toLocaleString())
+    }
+    calcTime()
+</script>
+<!--第三题  -->
+<script>
+    function calcDay(n){
+        var date=new Date(n).getTime()
+        var date1=new Date(n).getFullYear()
+        var date2=new Date(date1,0,1).getTime()
+        console.log('这是这一年的第'+Math.ceil((date-date2)/1000/3600/24)+'天')
+    }
+    calcDay('2018-9-1')
+</script>
+</html>

@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav-content{
+    width: 1226px;
+    height: 460px;
+    margin: auto;
+    background-image: url(./img/bg1.webp);
+    background-size: 100%;
+}
+ul{
+    list-style: none;
+}
+li{
+    cursor: pointer;
+}
+.slide-list{
+    position: relative;
+    width: 234px;
+    height: 460px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    background-color: rgba(105,101,101,.6);
+}
+
+.slide-list ul li:hover{
+    background-color: #ff6700;
+}
+.slide-list ul li:hover .list-content{
+    display: block;
+}
+.slide-list ul li p{
+    width: 204px;
+    color: #fff;
+    font-size: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.slide-list li{
+    width: 234px;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.slide-list li img{
+    width: 14px;
+    height: 14px;
+    margin-right: 20px;
+    margin-top: 14px;
+}
+.list-content{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 234px;
+    width: 992px;
+    height: 460px;
+    padding-top: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .18);
+    box-sizing: border-box;
+}
+.list-content ul li{
+    width: 265px;
+    height: 76px;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    display: flex;
+}
+.list-content ul li p{
+    font: 14px / 1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color:#333;
+    margin-left: 10px;
+    line-height: 40px;
+}
+
+.list-content ul li:hover {
+    background-color: #fff;  
+}
+.list-content ul li:hover p{
+    
+    color:#ff6700;
+}
+.list-content ul li img{
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+.zhedie{
+    display: flex;
+}
+
+
+.Hanging-box{
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 83.6px;
+    height: 453px;
+}
+.Hanging-box ul li{
+    width: 83.6px;
+    height: 91.6px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    box-sizing: border-box;
+    text-align: center;
+}
+.original{
+    width: 30px;
+    height: 30px;
+    margin-top: 18px;
+    
+}
+.light{
+    display: none;
+}
+.Hanging-box p{
+    font: 14px / 1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: #757575;
+}
+.Hanging-box li:hover p{
+    color: #ff6700;
+}
+.Hanging-box li:hover .light{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: 18px;
+    margin-left: 26px;
+    margin-bottom: 4.6px;
+}
+.Hanging-box li:hover .original{
+    display: none;
+}
+.erweima{
+    display: none; 
+    position: absolute;
+    bottom: 262px;
+    right: 100px;
+    width: 130px;
+    height: 190px;
+    background-color: #fff;
+    border:1px solid #f5f5f5 ;
+    text-align: center;
+}
+.Hanging-box li:hover .erweima{
+    display: block;
+}
+.Hanging-box li:hover .erweima p{
+    color: #757575;
+}
+.erweima img{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.erweima p{
+    padding: 0 10px;
+}
+
+

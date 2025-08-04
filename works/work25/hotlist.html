@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/hotlist.css">
+</head>
+<body>
+    <div class="hot">
+        <div class="title-box">
+            <div class="left-title">
+                <p>百度热搜</p>
+                <img src="./img/arrow-right.svg" alt="">
+            </div>
+            <div class="right-title">
+                <img src="./img/rotate.svg" alt="">
+                <p onclick="change()">换一换</p>
+            </div>
+        </div>
+        <ul class="title-list">
+        </ul>
+        <div class="lists">
+            <!-- <ul class="list-one">
+                <li><span class="number"><img src="./img/top.svg" alt=""></span>
+                    <span class="text">习近平对防汛救灾工作作出重要指示</span>
+                </li>
+                <li><span class="number number1">1</span>
+                    <span class="text">“钱和车都没了 但我救了1个人”</span>
+                </li>
+                <li><span class="number number2">2</span>
+                    <span class="text">北京最大降水量315毫米什么概念</span>
+                </li>
+                <li><span class="number number3">3</span>
+                    <span class="text">北京全力应对本轮强降雨</span>
+                </li>
+                <li><span class="number number4">4</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">5</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">6</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">7</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+                <li><span class="number number4">8</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">9</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">10</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">11</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+                <li><span class="number number4">12</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">13</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">14</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">15</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+    
+    
+    
+            </ul>
+            <ul class="zheng-list">
+                <li><span class="number number1">1</span>
+                    <span class="text">“钱和车都没了 但我救了1个人”</span>
+                </li>
+                <li><span class="number number2">2</span>
+                    <span class="text">北京最大降水量315毫米什么概念</span>
+                </li>
+                <li><span class="number number3">3</span>
+                    <span class="text">北京全力应对本轮强降雨</span>
+                </li>
+                <li><span class="number number4">4</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">5</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">6</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">7</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+                <li><span class="number number4">8</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">9</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">10</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+            </ul>
+            <ul class="list-one">
+                <li><span class="number number1">1</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+                <li><span class="number number2">2</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number3">3</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">4</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">5</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+                <li><span class="number number4">6</span>
+                    <span class="text">“钱和车都没了 但我救了1个人”</span>
+                </li>
+                <li><span class="number number4">7</span>
+                    <span class="text">北京最大降水量315毫米什么概念</span>
+                </li>
+                <li><span class="number number4">8</span>
+                    <span class="text">北京全力应对本轮强降雨</span>
+                </li>
+                <li><span class="number number4">9</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">10</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">11</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">12</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+                <li><span class="number number4">13</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">14</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">15</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+    
+            </ul>
+            <ul class="list-one">
+                <li><span class="number number1">1</span>
+                    <span class="text">“钱和车都没了 但我救了1个人”</span>
+                </li>
+                <li><span class="number number2">2</span>
+                    <span class="text">北京最大降水量315毫米什么概念</span>
+                </li>
+                <li><span class="number number3">3</span>
+                    <span class="text">北京全力应对本轮强降雨</span>
+                </li>
+                <li><span class="number number4">4</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">5</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">6</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">7</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+                <li><span class="number number4">8</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">9</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">10</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">11</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+                <li><span class="number number4">12</span>
+                    <span class="text">女子电动车失踪多日 偷车贼是自己</span>
+                </li>
+                <li><span class="number number4">13</span>
+                    <span class="text">北京朝阳降雨量下至全国第一</span>
+                </li>
+                <li><span class="number number4">14</span>
+                    <span class="text">上海警方查获5000余只“Lababa”</span>
+                </li>
+                <li><span class="number number4">15</span>
+                    <span class="text">湖南一地天降多块不明物体 当地回应</span>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+</body>
+<script src="./data.js"></script>
+<script src="./hotlist.js"></script>
+</html>

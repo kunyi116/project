@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            display: flex;
+        }
+        img {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lists">
+    </div>
+</body>
+<script>
+    var lists=document.querySelector('.lists')
+    fetch("https://m.taoyuewenhua.com/ajax/book_mall?ctype=2&seed=7084&page=0").then(res=> res.json()).then(res1=> {
+        console.log(res1.data.channelList)
+        res1.data.channelList.forEach(function(item) {
+            var str=''
+            item.bookList.forEach(function(list) {
+                str+=`
+                    <li onclick="jump('${list.sourceId}')">
+                        <img src="${list.coverUrl}">
+                        <p>${list.title}</p>
+                    </li>
+                `
+            })
+            lists.innerHTML+=`
+                <div class="list">
+                    <p>${item.title}</p>   
+                    <ul>
+                        ${str}    
+                    </ul> 
+                </div>
+            `
+        })
+        
+    }).catch(err=> {
+        console.log(err)
+    })
+
+    function jump(id) {
+        window.location.href='detail.html?id='+id
+    }
+</script>
+</html>

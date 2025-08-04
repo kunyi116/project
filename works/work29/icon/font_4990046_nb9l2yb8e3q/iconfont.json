@@ -1,0 +1,107 @@
+{
+  "id": "4990046",
+  "name": "ximalaya",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "77191",
+      "name": "二维码",
+      "font_class": "erweima",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "630092",
+      "name": "向下箭头",
+      "font_class": "xiangxiajiantou",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "1004717",
+      "name": "新浪微博",
+      "font_class": "xinlangweibo",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "1278125",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "5387752",
+      "name": "电脑_o",
+      "font_class": "diannao_o",
+      "unicode": "eb49",
+      "unicode_decimal": 60233
+    },
+    {
+      "icon_id": "5387754",
+      "name": "笔记本电脑_o",
+      "font_class": "bijibendiannao_o",
+      "unicode": "eb4a",
+      "unicode_decimal": 60234
+    },
+    {
+      "icon_id": "8288886",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e856",
+      "unicode_decimal": 59478
+    },
+    {
+      "icon_id": "8605680",
+      "name": "00 公共-02工具栏-增大字号 16px",
+      "font_class": "gonggong-gongjulan-zengdazihaopx",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "9656827",
+      "name": "剪刀",
+      "font_class": "jiandao",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "10487575",
+      "name": "收音机",
+      "font_class": "shouyinji",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "11372702",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e8b9",
+      "unicode_decimal": 59577
+    },
+    {
+      "icon_id": "13764775",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "13815300",
+      "name": "大v",
+      "font_class": "v",
+      "unicode": "e806",
+      "unicode_decimal": 59398
+    },
+    {
+      "icon_id": "14552693",
+      "name": "页面配置",
+      "font_class": "yemianpeizhi",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

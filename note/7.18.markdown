@@ -1,0 +1,53 @@
+css3新增选择器
+    属性选择器
+    标签名 [属性名="属性值"]{
+
+    }
+    结构伪类选择器
+        :nth-child(n) 选中该元素父元素中第n个是该元素的样式
+        n可以是以下值
+            odd 代表奇数行
+            even 代表偶数行
+            2n+1
+            .....
+        :first-child{
+
+        }选中第一个子元素
+
+        :last-child{
+
+        }选中最后一个子元素
+
+        nth-last-nth(n){
+
+        }倒数第n个元素
+
+        n-of-type(n){
+
+        }选择第n个子元素
+
+        e~f
+        通用兄弟元素选择器 匹配e元素后f元素的所有兄弟元素
+
+        元素:not(s){
+
+        } 否认伪元素选择器 选择所有元素 且过滤掉 s元素
+    
+    媒体查询：同一个网页可以根据不同的视口，实现不同的样式
+        @media
+            格式：
+                    all
+                    screen
+                        min-width 最小宽度
+                    @media screen and (min-width: 值1) and (max-width:值2){
+                        样式
+                    }在值1宽度至值2宽度中使用括号内样式
+
+                    @media screen and (min-width: 值1){
+                        样式
+                    }屏幕尺寸大于值1使用括号内样式
+
+                    @media screen and (max-width: 值1){
+                        样式
+                    }屏幕尺寸小于值1使用括号内样式
+

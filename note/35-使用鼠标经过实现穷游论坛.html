@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imgs {
+            display: flex;
+            width: 320px;
+        }
+        .imgs img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://pic.qyer.com/album/user/4289/20/RUtdSxgHZkk/index/680x400" alt="">
+    <div class="imgs" onmouseover="getSrc()">
+        <img src="https://pic.qyer.com/album/user/4289/20/RUtdSxgHZkk/index/80x80" alt="">
+        <img src="https://pic.qyer.com/album/user/4282/37/RUtdQBkAYUw/index/80x80" alt="">
+        <img src="https://pic.qyer.com/album/user/4334/67/RUpWRhwAZUk/index/80x80" alt="">
+        <img src="https://pic.qyer.com/album/user/4297/17/RUtcRRsAaUk/index/80x80" alt="">
+    </div>
+</body>
+<script>
+    var img=document.querySelector('img')
+    function getSrc() {
+        var arr=event.target.getAttribute('src').split("/")
+        arr.pop()
+        arr.push("680x400")
+        arr=arr.join("/")
+        img.setAttribute('src',arr)
+    }
+</script>
+</html>

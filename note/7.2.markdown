@@ -1,0 +1,11 @@
+        label标签
+            为input标签进行标注
+            改进用户点击效果
+            <label><input/></label>
+            或者
+            在input中用id属性 
+            在label中用for属性
+            属性后命名一致
+        table标签
+            合并列 colspan
+            合并行 rowspan
