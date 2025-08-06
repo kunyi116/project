@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .hide{
+        display: none;
+    }
+    ul{
+        display: flex;
+        list-style: none;
+    }
+    li{
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1>今日待做</h1>
+    <ul></ul>
+    <input id="content" type="text">
+    <button onclick="add()">添加</button>
+
+
+    <ul>
+        <li data-index="0">标题一</li>
+        <li data-index="1">标题二</li>
+        <li data-index="2">标题三</li>
+    </ul>
+    <p>内容1</p>
+    <p class="hide">内容2</p>
+    <p class="hide">内容3</p>
+</body>
+<script>
+    var ul=document.querySelector('ul')
+    var input=document.querySelector('input')
+    
+    function add(){
+        var value=document.getElementById('content').value
+        var revaue = value.replace(/^\s*|(\s*$)/g,"")
+        if(value=='' || revaue.length <= 0){
+            alert('请输入内容')
+            input.value=''
+        }else{
+            ul.innerHTML+=`
+        <li>${value}</li>
+        `
+        input.value=''
+        }
+    }
+</script>
+<script>
+    var li=document.querySelectorAll('li')
+    var p=document.querySelectorAll('p')
+    for(var i=0; i<li.length; i++){
+        li[i].onmouseover=function (){
+            for(var j=0; j<p.length; j++){
+                p[j].classList.add('hide')
+            } 
+            p[this.dataset.index].classList.remove('hide')
+        }
+    }
+</script>
+</html>

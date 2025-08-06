@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: PingFangSC-Regular, "Source Sans Pro", Arial, sans-serif;
+  background-color: #f6f6f6;
+}
+
+ul {
+  list-style: none;
+}
+
+.top-search {
+  position: relative;
+  width: 18.75rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .25rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.top-search img {
+  width: 1.225rem;
+  height: 1.2rem;
+}
+
+.top-search .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: .9rem;
+}
+
+.top-search .right-box {
+  font-family: PingFangSC-Regular;
+  width: 4.2rem;
+  font-size: .75rem;
+  color: #f39c11;
+  text-align: center;
+  border-radius: 5rem;
+  border: 1px solid  #f39c11;
+}
+
+.book-detail {
+  width: 18.75rem;
+  height: 8.35rem;
+  padding: .75rem .75rem .75rem .5rem;
+  box-sizing: border-box;
+  display: flex;
+  background-color: #fff;
+}
+
+.book-detail .img-box img {
+  width: 4.8rem;
+  height: 6.85rem;
+}
+
+.book-detail .right-text {
+  width: 12.2rem;
+  height: 6.85rem;
+  margin-left: .5rem;
+}
+
+.book-detail .right-text .up-box .title {
+  font-size: .85rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.book-detail .right-text .up-box .star img {
+  width: .6rem;
+  height: .6rem;
+}
+
+.book-detail .right-text .down-box {
+  margin-top: .5rem;
+}
+
+.book-detail .right-text .down-box p {
+  font-size: .6rem;
+  color: #878787;
+  margin-bottom: .3rem;
+}
+
+.book-detail .right-text .down-box p:last-child span:last-child {
+  margin-left: 16px;
+}

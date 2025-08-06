@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建地图</title>
+</head>
+
+<script charset="utf-8" src="https://map.qq.com/api/gljs?v=1.exp&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"></script>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html,
+    body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+    }
+
+    #container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+     ul{
+        list-style: none;
+    }
+    .search{
+       position: fixed;
+       top: 50px;
+       left: 150px;
+       z-index: 2;
+       background-color: #fff;
+       border: 1px solid #e0e0e0;
+       display: flex;
+       align-items: center;
+        span{
+            display: inline-block;
+            background-color: #7fb8ff;
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        span:hover{
+            background-color: blue;
+        }
+    }
+    input{
+        width: 200px;
+        height: 30px;
+        border: none;
+        box-sizing: border-box;
+        outline: none;
+        padding: 0 10px;
+       box-sizing: border-box;
+       font-size: 16px;
+       color: #333;
+       }
+    .right{
+        position: fixed;
+        top: 50px;
+        right: 150px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        li{
+            margin-right: 10px;
+            width: 60px;
+            border-radius: 10px;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            white-space: nowrap;
+            padding: 5px;
+            box-sizing: border-box;
+            text-align: center;
+            cursor: pointer;
+            transition:  background-color 0.3s linear;
+
+        }
+        li:hover{
+            background-color: #7fb8ff;
+            color: #fff;
+            transition:  background-color 0.3s linear;
+        }
+    }
+    .search-jump{
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        z-index: 2;
+        min-width: 241.6px;
+        background-color: #fff;
+        padding: 5px;
+        box-sizing: border-box;
+        li{
+            width: 100%;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 5px;
+            box-sizing: border-box;
+            color: #333;
+            opacity: .9;
+            p{
+                white-space: nowrap;
+                
+            }
+        }
+        li:hover{
+            color: rgb(22, 106, 190);
+            cursor: pointer;
+        }
+    }
+</style>
+<body>
+    <div class="search">
+        <input oninput="changeValue()"  class="ipt" type="text" placeholder="输入你想去的地方">
+        <span onclick="search()">搜索</span>
+        <ul class="search-jump" onclick="changeipt()">
+            
+        </ul>
+    </div>
+    <ul class="right">
+        <li onclick="aroundSearch(this)">美食</li>
+        <li onclick="aroundSearch(this)">公园</li>
+        <li onclick="aroundSearch(this)">超市</li>
+        <li onclick="aroundSearch(this)">学校</li>
+    </ul>
+    <div id="container"></div>
+</body>
+<script>
+    var Lat=39.984104
+    var Lng=116.307503
+    var infoWindow
+    var center = new TMap.LatLng(Lat, Lng);
+            //初始化地图
+            var map = new TMap.Map("container", {
+                rotation: 0,//设置地图旋转角度
+                pitch:30, //设置俯仰角度（0~45）
+                zoom:16,//设置地图缩放级别
+                center: center//设置地图中心点坐标
+            });
+    
+    function search(){
+        var value=document.querySelector('.ipt').value
+        fetch(`https://apis.map.qq.com/ws/place/v1/suggestion/?keyword=${value}&key=HSNBZ-A7C3W-67PRW-Y6LHW-CJR4V-7BBLP`).then(res=>res.json()).then(res1=>{
+            var Lat=res1.data[0].location.lat
+            var Lng=res1.data[0].location.lng
+            map.setCenter(new TMap.LatLng(Lat,Lng))
+        }) 
+    }
+var ul=document.querySelector('.search-jump')
+
+function changeValue(){
+    var value=document.querySelector('.ipt').value
+        ul.style.display='block'
+     fetch(`https://apis.map.qq.com/ws/place/v1/suggestion?keyword=${value}&key=HSNBZ-A7C3W-67PRW-Y6LHW-CJR4V-7BBLP`).then(res=>res.json()).then(res2=>{
+        ul.innerHTML=''
+        res2.data.forEach(function(item){
+            ul.innerHTML+=`
+            <li data-lat="${item.location.lat}" data-lng="${item.location.lng}" data>${item.title}</li>
+        `
+        })
+     })
+}
+var ipt=document.querySelector('.ipt')
+function changeipt(){
+  ipt.value = event.target.innerHTML
+    var Lat=event.target.dataset.lat
+    var Lng=event.target.dataset.lng
+    console.log(Lat,Lng)
+    
+     var center = new TMap.LatLng(Lat,Lng);
+      var marker = new TMap.MultiMarker({
+        map: map,
+        styles: {
+          // 点标记样式
+          marker: new TMap.MarkerStyle({
+            width: 20, // 样式宽
+            height: 30, // 样式高
+            anchor: { x: 10, y: 30 }, // 描点位置
+          }),
+        },
+        geometries: [
+          // 点标记数据数组
+          {
+            // 标记位置(纬度，经度，高度)
+            position: center,
+            id: 'marker',
+          },
+        ],
+      });
+    map.setCenter(new TMap.LatLng(Lat,Lng))
+    ul.style.display='none'
+    return { Lat,Lng}
+}
+
+    function aroundSearch(event){
+        if (map.getLayer('circle')) {
+            map.removeLayer('circle');
+        }
+        if (map.getLayer('markers')) {
+            map.removeLayer('markers');
+        }
+        if (map.getLayer('circle_border')) {
+            map.removeLayer('circle_border');
+        }
+        if (infoWindow && infoWindow.open()) {
+            infoWindow.close();
+        }
+        
+        const center = new TMap.LatLng(Lat, Lng);
+        const circle = new TMap.MultiCircle({
+            id: 'circle',
+            map,
+            geometries: [{
+            center: center,       // 设置圆的中心
+            radius: 1000  //设置圆的半径
+            }]
+        });
+        marker = new TMap.MultiMarker({
+            id: 'markers',
+            map,
+            styles:{
+                "food": new TMap.MarkerStyle({
+                    width:32,
+                    height:32,
+                    src:'http://localhost:52330/works/work31/img/food.png'
+                }),
+                "park": new TMap.MarkerStyle({
+                    width:32,
+                    height:32,
+                    src:'http://localhost:52330/works/work31/img/park.png'
+                }),
+                "market": new TMap.MarkerStyle({
+                    width:32,
+                    height:32,
+                    src:'http://localhost:52330/works/work31/img/market.png'
+                }),
+                "school": new TMap.MarkerStyle({
+                    width:32,
+                    height:32,
+                    src:'http://localhost:52330/works/work31/img/school.png'
+                })
+            },
+            geometries: []
+        });
+        infoWindow = new TMap.InfoWindow({
+            map,
+            position: map.getCenter(),
+            offset: { 
+            x: 0,
+            y: -48
+            }
+        }).close();
+        marker.on('click', evt => {
+            let content = `
+            <div>
+                <p>名称: ${evt.geometry.properties.title}</p >
+                <p>地址: ${evt.geometry.properties.address}</p >
+                <p>电话: ${evt.geometry.properties.tel}</p >
+            </div>
+            `
+            infoWindow.open();
+            infoWindow.setPosition(evt.geometry.position);  // 设置信息窗口的坐标
+            infoWindow.setContent(content);   // 设置信息窗口的内容
+        });
+        fetch(`https://apis.map.qq.com/ws/place/v1/search?key=HSNBZ-A7C3W-67PRW-Y6LHW-CJR4V-7BBLP&boundary=nearby(${Lat},${Lng},1000,0)&keyword=${event.innerHTML}&page_size=10&page_index=1&orderby=_distance`).then(res=>res.json()).then(res1=>{
+            var markerArr = []
+            let newBounds = new TMap.LatLngBounds();
+            res1.data.forEach(function(item){
+                let position = new TMap.LatLng(item.location.lat, item.location.lng);
+                markerArr.push({
+                    position: position,
+                    styleId: event.innerHTML=='美食'?"food":event.innerHTML=='公园'?"park":event.innerHTML=='超市'?"market":"school",
+                    properties: {
+                        title: item.title,
+                        address: item.address,
+                        tel: item.tel!==' ' ? item.tel : '暂无'
+                    }
+                })
+                newBounds.extend(position);
+            })
+            marker.setGeometries(markerArr);
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+
+      
+</script>
+<script src="./js/index.js"></script>
+</html>

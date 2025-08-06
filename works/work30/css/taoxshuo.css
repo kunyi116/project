@@ -204,3 +204,8 @@ ul {
   background-color: rgba(255, 187, 27, 0.1);
   color: #ff9000;
 }
+
+.content .second-box .secondul li .right-content .rb-bottom .right-tog .blue {
+  background-color: rgba(76, 161, 255, 0.1);
+  color: #1ba1ff;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .text{
+            position: relative;
+            width: 600px;
+            height: 200px;
+            margin: auto;
+            background-color: #e0e0e0;
+            border: 1px solid #999;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 18px;
+            margin-top: 20px;
+        }
+        textarea{
+            width: 100%;
+            height: 100%;
+            resize: none;
+            border: none;
+            outline: none;
+            background-color: #e0e0e0;
+            font-size: 16px;
+            font-family: 楷体;
+        }
+        button{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            background-color: blue;
+            color: #fff;
+            cursor: pointer;
+        }
+        .liaotian{
+            width:600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="text"><textarea ></textarea>
+    <button onclick="getValue()">发送</button></div>
+    <div class="liaotian">
+        <ul></ul>
+    </div>
+</body>
+<script>
+    var text=document.querySelector('textarea')
+    
+    function getValue(){
+        var value=document.querySelector('textarea').value
+        var div=document.querySelector('.liaotian')
+        div.innerHTML+=`
+        <p>${value}</p>
+        `
+        text.value=''
+        fetch('https://v2.xxapi.cn/api/turing?msg='+value).then(res=>res.json()).then(res1=>{
+        var ul=document.querySelector('.liaotian ul')
+     
+        console.log(res1)
+        ul.innerHTML+=`
+        
+        <li>${res1.data}</li>
+        `
+        
+    }).catch(err=>{
+        console.log(err)
+    })
+    }
+    
+    
+    
+</script>
+</html>

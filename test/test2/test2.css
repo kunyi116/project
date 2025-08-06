@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.qy-content{
+    width: 100%;
+    height: 558px;
+    margin: auto;
+    background-color: #e0e0e0;
+    padding: 20px 0;
+}
+.left-content{
+    width: 268px;
+    height: 466px;
+    margin: auto;
+}
+.left-title{
+   width: 268px;
+   height: 40px;
+}
+.wrap-content{
+    background-color: #fff;
+}
+.wrap-content img{
+    display: block;
+    width: 269px;
+    height: 160px;
+}
+.up-box{
+    width: 236px;
+    height: 101px;
+    margin: 0 16px;
+    padding: 18px 0;
+    box-sizing: border-box;
+    text-align: left;
+}

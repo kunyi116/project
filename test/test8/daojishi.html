@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            width: 500px;
+            margin: auto;
+            text-align: center;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+</body>
+<script>
+    var p=document.querySelector('p')
+    setInterval(() =>{
+        var time1= new Date('2026.07.07 00:00:00').getTime()
+        var time2= new Date().getTime()
+        p.innerHTML='距离2026年高考还有'+Math.floor((time1-time2)/1000/60/60/24)+'天'+Math.floor((time1-time2)/1000/60/60%24)+'时'+Math.floor((time1-time2)/1000/60%60)+'分'+Math.floor((time1-time2)/1000%60)<10? '0'+Math.floor((time1-time2)/1000%60)+'秒':Math.floor((time1-time2)/1000%60)+'秒'
+    },1000)
+   
+</script>
+</html>

@@ -51,12 +51,13 @@ fetch("http://betam.taoyuewenhua.com/ajax/book_mall?ctype=1&seed=8443&page=0").t
                                 <p class="bottom-author">${listtwo.authorName}</p>
                                 <p class="right-tog">
                                     <span class="gery">
-                                        ${listtwo.recTitle.split('·')[2]}
+                                        ${Math.floor(listtwo.allWords/10000)}万字
                                     </span>
                                     <span class="gery">
-                                        历史
+                                        ${listtwo.categoryName}
                                     </span>
-                                    <span class="orag">完结</span>
+                                        ${listtwo.status==30?'<span class="blue">连载</span>':'<span class="orag">完结</span>'}
+                                    
                                 </p>
                             </div>
                     </div>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        ul {
+            width: 680px;
+            height: auto;
+            margin: 0 auto;
+            list-style: none;
+        }
+        img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        li {
+            display: flex;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        em {
+            display: block;
+        }
+        .txt {
+            margin-top: 15px;
+        }
+        .author-name {
+            color: #323232;
+            margin: 0 9px 0 0;
+        }
+        .intro,.comt,.reply-time {
+            display: flex;
+            align-items: center;
+        }
+        .comt,.reply-time {
+            color: #959595;
+        }
+        .reply-time {
+            margin-left: 20px;
+        }
+        .comt em {
+            color: #323232;
+            font-weight: 400;
+        }
+        span {
+            display: block;
+            margin-right: 3px;
+            width: 16px;
+            height: 14px;
+            background-image: url(https://common1.qyerstatic.com/bbs/old/images/index/idxratio2.png);
+            background-repeat: no-repeat;
+            background-size: 152px auto;
+        }
+        .i-eye {
+            background-position: -19px -20px;
+        }
+        .i-reply {
+            background-position: -39px -20px;
+            margin-left: 20px;
+        }
+        .i-time {
+            background-position: -105px 0;
+        }
+        .comment {
+            width: 387px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #323232;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .box {
+            display: flex;
+            height: 60px;
+            margin-top: 5px;
+        }
+        .box-time {
+            width: 127px;
+            height: 40px;
+            margin: 12px 15px 10px 0;
+            padding-right: 16px;
+            color: #323232;
+            font-size: 12px;
+            border-right: 1px solid #ececec;
+            font-weight: 400;
+        }
+        strong {
+            color: #9d9d9d;
+            font-weight: normal;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        .go-time {
+            margin-bottom: 5px;
+        }
+        .box-area {
+            display: flex;
+            align-items: center;
+        }
+        .i-area {
+            width: 10px;
+            height: 14px;
+            margin: 25px 0;
+            background-image: url(https://common1.qyerstatic.com/bbs/old/images/index/idxratio2.png);
+            background-repeat: no-repeat;
+            background-size: 152px auto;
+            background-position: -142px -147px;
+        }
+        .areas {
+            padding: 1px 0 0 5px;
+            width: 235px;
+            line-height: 20px;
+            font-size: 14px;
+            color: #636363;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <ul></ul>
+</body>
+<script>
+    // 获取ul元素，用于插入评论项
+    var ul=document.querySelector('ul')
+    // 向API请求数据，获取评论信息
+    fetch("https://bbs.qyer.com/index.php?action=getTogether&page=1").then(res=> res.json()).then(qy=> {
+        console.log(qy)
+        for(var i=0; i<qy.data.length; i++) {
+            let placename = '';
+            if (qy.data[i].together_info && qy.data[i].together_info.placename) {
+                // placename 可能是数组或字符串，统一处理
+                if (Array.isArray(qy.data[i].together_info.placename)) {
+                    placename = qy.data[i].together_info.placename.join('、');
+                } else {
+                    placename = qy.data[i].together_info.placename;
+                }
+            } else {
+                placename = '暂无地区信息';
+            }
+            ul.innerHTML+=`
+                <li>
+                    <img src="${qy.data[i].face}">
+                    <div class="txt">
+                        <div class="intro">
+                            <p class="author-name">${qy.data[i].username}</p>
+                            <div class="comt">
+                                <span class="i-eye"></span>
+                                <em>${qy.data[i].viewNumber}</em>
+                                <p>人浏览</p>
+                                <span class="i-reply"></span>
+                                <p>0人回复</p>
+                            </div>
+                            <div class="reply-time">
+                                <span class="i-time"></span>
+                                <p>最后回复于</p>
+                                <em>${qy.data[i].last_post_time}</em>
+                            </div>
+                        </div>
+                        <p class="comment">${qy.data[i].subject}</p>
+                        <div class="box">
+                            <div class="box-time">
+                                <p class="go-time"><strong>出发</strong>${qy.data[i].together_info.departure_time_earliest}</p>
+                                <p class="black-time"><strong>返程</strong>${qy.data[i].together_info.departure_time_latest}</p>
+                            </div>
+                            <div class="box-area">
+                                <p class="i-area"></p>
+                                <p class="areas">${placename}</p>
+                            </div>
+                      </div>
+                    </div>    
+                </li>
+            `
+        }
+    })
+</script>
+</html>

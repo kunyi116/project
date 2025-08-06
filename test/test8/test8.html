@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="selectAll" type="checkbox">全选
+        <input type="checkbox" oninput="Getselect()" value="男">男
+        <input type="checkbox" oninput="Getselect()" value="女">女
+    
+</body>
+<script>
+    var input=document.querySelector('.selectAll')
+    var inputList=document.querySelectorAll('.checkbox input')
+    function Getselect(){
+        console.log(event.target.value)
+        console.log(event.target.checked)
+    }
+
+
+</script>
+</html>

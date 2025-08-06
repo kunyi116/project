@@ -1,0 +1,30 @@
+JSON.parse()
+    将数据转化为json对象 (取操作)
+JSON.stringify()
+    将数据转化为json字符串 (存操作)
+
+
+
+    localStorage
+        本地存储
+        本地存储中，不管存储什么数据类型，得到的结果都是字符串
+        本地存储中，只要不手动删除，数据会一直存在
+        用来作为本地存储来使用 
+        解决了cookie存储空间不足时，localStorage(5M甚至更多)进行存储 不同浏览器存储大小有区别 不能跨浏览器
+        读写操作
+            写数据
+                localStorage.setItem('属性名'，'属性值')   使用最多
+                或者
+                localStorage.属性名=属性值
+            读数据
+                localStorage.getItem('属性名')
+                或者
+                localStorage['属性名']
+            删除数据
+                localStorage.removeItem('属性名')
+            清空数据
+                localStorage.clear()
+    sessionStorage (会话存储)
+        临时会话存储
+            当前浏览器窗口打开(会话开始) 存储数据
+            当前浏览器窗口关闭(会话结束)    自动清除数据
