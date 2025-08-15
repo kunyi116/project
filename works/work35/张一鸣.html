@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哆啦A梦</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid #007acc;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="600"></canvas>
+</body>
+<script>
+    var canvas=document.querySelector('canvas')
+    var ctx=canvas.getContext('2d')
+
+        ctx.beginPath();
+    ctx.moveTo(200,400)
+    ctx.quadraticCurveTo(200,400,200,455)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.quadraticCurveTo(200,455,240,455)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.quadraticCurveTo(240,430,240,425)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.fillStyle = '#05a9e6'
+    ctx.fill()
+    //左腿
+
+    ctx.beginPath();
+    ctx.moveTo(300,400)
+    ctx.quadraticCurveTo(300,400,300,455)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.quadraticCurveTo(300,455,260,455)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.quadraticCurveTo(260,430,260,425)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.fillStyle = '#05a9e6'
+    ctx.fill()
+    //右腿
+
+    // 身体主体
+    ctx.beginPath()
+    ctx.ellipse(250, 340, 85, 90, 0, 0, 2*Math.PI)
+    ctx.fillStyle = '#05a9e6'
+    ctx.fill()
+    
+    ctx.stroke()
+
+    // 白色肚子
+    ctx.beginPath()
+    ctx.ellipse(250, 340, 65, 65, 0, 0, 2*Math.PI)
+    ctx.fillStyle = '#ffffff'
+    ctx.fill()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+
+    ctx.beginPath()
+    ctx.ellipse(250,210,100,105,0,0,2*Math.PI)
+    ctx.fillStyle='#05a9e6'
+    ctx.fill()
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+    //头蓝背景
+
+    ctx.beginPath()
+    ctx.ellipse(250,230,90,90,0,0,2*Math.PI)
+    ctx.fillStyle='#fff'
+    ctx.fill()
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+    //头白上背景
+
+    ctx.beginPath()
+    ctx.ellipse(250,220,58,50,0,0,Math.PI)
+    ctx.fillStyle='#b90b0c'
+    ctx.fill()
+    ctx.strokeStyle="black"
+    ctx.lineWidth=1
+    ctx.stroke()
+    //口腔
+
+    ctx.beginPath()
+    ctx.ellipse(229,150,20,25,0,0,2*Math.PI)
+    ctx.fillStyle='#fff'
+    ctx.fill()
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+    //左眼
+
+    ctx.beginPath()
+    ctx.ellipse(236,155,5,8,0,0,2*Math.PI)
+    ctx.fillStyle='black'
+    ctx.fill()
+    //左眼珠
+    
+    ctx.beginPath()
+    ctx.ellipse(236,155,2,3,0,0,2*Math.PI)
+    ctx.fillStyle='#fff'
+    ctx.fill()
+    //左眼白
+
+    ctx.beginPath()
+    ctx.ellipse(269,150,20,25,0,0,2*Math.PI)
+    ctx.fillStyle='#fff'
+    ctx.fill()
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+    //右眼
+
+    ctx.beginPath()
+    ctx.ellipse(263,155,5,8,0,0,2*Math.PI)
+    ctx.fillStyle='black'
+    ctx.fill()
+    //右眼珠
+
+    ctx.beginPath()
+    ctx.ellipse(263,155,2,3,0,0,2*Math.PI)
+    ctx.fillStyle='#fff'
+    ctx.fill()
+    //右眼白
+
+    ctx.beginPath()
+    ctx.arc(250,176,10,0,2*Math.PI)
+    ctx.fillStyle='red'
+    ctx.fill()
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+    //鼻子
+
+    ctx.beginPath()
+    ctx.ellipse(248,173,2,3,7,0,2*Math.PI)
+    ctx.fillStyle='#fff'
+    ctx.fill()
+    ctx.strokeStyle="black"
+    ctx.lineWidth=0.5
+    ctx.stroke()
+    //鼻子高光
+
+    ctx.beginPath()
+    ctx.moveTo(185,209)
+    ctx.quadraticCurveTo(200,225,250,210)
+    ctx.strokeStyle="#fff"
+    ctx.lineWidth=20
+    ctx.stroke()
+    //左嘴角遮盖
+
+    ctx.beginPath()
+    ctx.moveTo(315,209)
+    ctx.quadraticCurveTo(300,225,250,210)
+    ctx.strokeStyle="#fff"
+    ctx.lineWidth=20
+    ctx.stroke()
+    //右嘴角遮盖
+
+    ctx.beginPath()
+    ctx.moveTo(250,186)
+    ctx.lineTo(250,220)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+    //人中
+
+    ctx.beginPath()
+    ctx.moveTo(180,185)
+    ctx.lineTo(220,195)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=1
+    ctx.stroke()
+    //左上胡须
+
+    ctx.beginPath()
+    ctx.moveTo(175,200)
+    ctx.lineTo(215,200)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=1
+    ctx.stroke()
+    //左中胡须
+
+    ctx.beginPath()
+    ctx.moveTo(180,215)
+    ctx.lineTo(220,205)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=1
+    ctx.stroke()
+    //左下胡须
+
+    ctx.beginPath()
+    ctx.moveTo(320,185)
+    ctx.lineTo(280,195)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=1
+    ctx.stroke()
+    //右上胡须
+
+    ctx.beginPath()
+    ctx.moveTo(325,200)
+    ctx.lineTo(285,200)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=1
+    ctx.stroke()
+    //右中胡须
+
+    ctx.beginPath()
+    ctx.moveTo(320,215)
+    ctx.lineTo(280,205)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=1
+    ctx.stroke()
+    //右下胡须
+
+    ctx.beginPath()
+    ctx.moveTo(185,219)
+    ctx.quadraticCurveTo(200,235,250,220)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+    //左嘴角
+
+    ctx.beginPath()
+    ctx.moveTo(315,219)
+    ctx.quadraticCurveTo(300,235,250,220)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+    //右嘴角
+
+
+    ctx.beginPath()
+    ctx.ellipse(250,280,80,35,0,0,Math.PI)
+    ctx.fillStyle='#ff2e2c'
+    ctx.fill()
+    ctx.lineWidth=2
+    ctx.stroke()
+
+    ctx.beginPath()
+    ctx.ellipse(250,275,75,21,0,0,Math.PI)
+    ctx.fillStyle='#fff'
+    ctx.fill()
+
+    ctx.beginPath()
+    ctx.moveTo(170,280)
+    ctx.quadraticCurveTo(250,315,330,280)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=2
+    ctx.stroke()
+
+
+    ctx.beginPath()
+    ctx.moveTo(210,340)
+    ctx.lineTo(290,340)
+    ctx.strokeStyle="black"
+    ctx.lineWidth=3
+    ctx.stroke()
+    
+
+    // 口袋
+    ctx.beginPath()
+    ctx.ellipse(250, 340, 40, 40, 0, 0, Math.PI)
+    ctx.fillStyle = '#ffffff'
+    ctx.fill()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke();
+
+    // 铃铛
+    ctx.beginPath()
+    ctx.arc(250, 330, 20, 0, 2*Math.PI)
+    ctx.fillStyle = '#ffd700'
+    ctx.fill()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+
+    // 铃铛中间的黑点
+    ctx.beginPath();
+    ctx.arc(250, 330, 3, 0, 2*Math.PI);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+
+    ctx.beginPath()
+    ctx.moveTo(180,300)
+    ctx.quadraticCurveTo(180,300,140,230)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.quadraticCurveTo(130,240,130,250)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.quadraticCurveTo(170,330,170,320)
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+    ctx.fillStyle = '#05a9e6'
+    ctx.fill()
+    //左胳膊
+
+
+    // 左手
+    ctx.beginPath()
+    ctx.ellipse(135, 245, 20, 20, 0, 0, 2*Math.PI)
+    ctx.fillStyle = '#fff'
+    ctx.fill()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // 右手
+    ctx.beginPath()
+    ctx.ellipse(340, 380, 20, 20, 0, 0, 2*Math.PI)
+    ctx.fillStyle = '#fff'
+    ctx.fill()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+
+
+
+    // 左脚
+    ctx.beginPath();
+    ctx.ellipse(220, 470, 30, 20, 0, 0, 2*Math.PI)
+    ctx.fillStyle = '#ffffff'
+    ctx.fill()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+
+    // 右脚
+    ctx.beginPath()
+    ctx.ellipse(280, 470, 30, 20, 0, 0, 2*Math.PI)
+    ctx.fillStyle = '#ffffff'
+    ctx.fill()
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    ctx.stroke()
+</script>
+</html>

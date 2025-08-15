@@ -1,0 +1,49 @@
+svg是基于xml描述 矢量 图形格式 xml是可拓展标记语言 经常用于传输和存储数据
+    svg不管如何放大缩小，永远不失真，可以在任何分辨率下打印高质量的图片 与传统gif jpeg jpg png 相比 尺寸更小 可压缩性更强
+    先设定<svg></svg>画布 然后直接在标签内进行绘图
+        通用属性
+            fill 填充 在图形中可以填充对应的颜色 默认为#000 支持rgb rgba格式 fill:none 无填充色
+            stroke 描边 stroke-width 控制描边线宽
+            transform 变换
+                <rect></rect>  矩形
+                    x y 对应当前矩形x y坐标
+                    rx ry 矩形边角的半径弧度
+                    width 宽度
+                    height  高度
+                <circle></circle>  圆形
+                    r 半径
+                    cx cy 圆心坐标
+                <ellipse></ellipse>  椭圆
+                    cx cy 圆心坐标
+                    rx ry 垂直与水平半径
+                <line></line>  线
+                    x1 y1 起始点坐标
+                    x2 y2 结束点坐标
+                <polyline></polyline> 折线
+                    points 点坐标
+                <polygon></polygon> 多边形
+                    points 点坐标
+                <path/> 路径  菜鸟教程svg在线编辑
+                <g></g> 给svg标签中的图形进行编组 想要引用g标签 必须在g标签上添加一个id去控制它
+                <use></use> 对编组的内容进行复用 使用 xlink:href 属性多次引用g元素 xlink:href:(编组后g标签的id名)
+                    x,y 坐标位置
+                <defs></defs> 复用已存储的元素(在这个标签里的内容不会在页面显示出来) 给里面存储的内容加上id名 使用<use></use>标签进行调用
+
+svg动画
+    requestAnimationFrame
+    格式
+        function animate (){
+            requestAnimationFrame(animate)
+        }
+        可以使用cancelAnimationFrame() 进行取消动画
+
+ES6
+    ECMAScript 6 es6 (全称)
+        let const
+            解决了变量提升的问题 可以绑定到对应代码块上 外部无法获取块级作用域 以后使用最多的是const
+            let 用于变量的声明 声明变量后可以被重新赋值 (一般用于)
+            const 用于常量的声明 声明常量后不能被重新赋值 (一般用于引用值)
+        
+            
+        
+                 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        基于promise异步请求 封装好的插件
+            axios
+                Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和node.js
+
+                网址：https://www.kancloud.cn/yunye/axios/234845/
+
+                数据请求：
+                    所有请求 我们需要看后台接口定义的类型(接口文档)
+                    get post put delete ...
+                        get 一般用于请求接收数据
+                        post 一般用于向后台传递数据(登录 注册 表单提交等)
+                        put 一般用于修改数据
+                        delete 一般用于删除数据
+
+                使用：
+                    引入axios
+                    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+                    请求：
+                        get请求：
+                            axios.get('url?参数名=参数值').then(res=> {
+
+                            }).catch(err=> {
+                            
+                            })
+
+                            或者
+                            axios.get('url', {
+                                params: {
+                                    参数名: 参数值
+                                }
+                            }).then(res=> {
+
+                            }).catch(err=> {
+                            
+                            })
+
+
+                        post请求:
+                            axios.post('url', {
+                                参数名: 参数值,
+                                参数名1: 参数值1
+                            }).then(res=> {
+
+                            }).catch(err=> {
+                            
+                            })
+    -->
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    // axios.get('https://cnodejs.org/api/v1/topics', {
+    //     params: {
+    //         page: 1,
+    //         limit: 5
+    //     }
+    // }).then(res=> {
+    //     console.log(res.data.data)
+    // }).catch(err=> {
+    //     console.log(err)
+    // })
+</script>
+</html>

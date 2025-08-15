@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function get(url) {
+        return new Promise((resolve,reject)=> {
+            const xhr=new XMLHttpRequest()
+            xhr.onreadystatechange=function() {
+                if(xhr.readyState==4 && xhr.status==200) {
+                    resolve(JSON.parse(xhr.responseText))
+                }else if(xhr.readyState==4 && xhr.status==404) {
+                    reject()
+                }
+            }
+            xhr.open("GET", url, true)
+            xhr.send()
+        })
+    }
+
+    get("https://cnodejs.org/api/v1/topics").then(res=> {
+        console.log(111,res)
+    }).catch(err=> {
+        console.log(err)
+    })
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    全国地图json线上地址
+        https://datav.aliyun.com/portal/school/atlas/area_selector
+-->
+<body>
+    <div id="main" style="width: 800px;height:800px;"></div>
+</body>
+<script src="js/echarts.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+var ROOT_PATH = 'https://echarts.apache.org/examples';
+
+var chartDom = document.getElementById('main');
+var myChart = echarts.init(chartDom);
+var option;
+
+myChart.showLoading();
+$.get('https://geo.datav.aliyun.com/areas_v3/bound/411500_full.json', function (geoJson) {
+  myChart.hideLoading();
+  echarts.registerMap('xinyang', geoJson);
+  myChart.setOption(
+    (option = {
+      visualMap: {
+        show: false,
+        min: 10,
+        max: 100,
+        text: ['High', 'Low'],
+        realtime: false,
+        calculable: true,
+        inRange: {
+          color: ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'skyblue', 'brown', 'yellowgreen']
+        }
+      },
+      series: [
+        {
+          name: '香港18区人口密度',
+          type: 'map',
+          map: 'xinyang',
+          label: {
+            show: true,
+            color: '#fff'
+          },
+          data: [
+            { name: '淮滨县', value: 10 },
+            { name: '息县', value: 20 },
+            { name: '潢川县', value: 30},
+            { name: '固始县', value: 40 },
+            { name: '商城县', value: 50 },
+            { name: '新县', value: 60 },
+            { name: '光山县', value: 70 },
+            { name: '罗山县', value: 80 },
+            { name: '浉河区', value: 90 },
+            { name: '平桥区', value: 100 }
+          ]
+        }
+      ]
+    })
+  );
+});
+
+option && myChart.setOption(option);
+
+</script>
+</html>

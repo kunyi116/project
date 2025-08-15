@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./css/detail.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="top-search">
         <img onclick="backMain()" src="./img/left.svg" alt="">
         <p class="title">
-           书籍详情
+            书籍详情
         </p>
         <p class="right-box">
             下载App
@@ -19,7 +21,38 @@
     <div class="box">
 
     </div>
+    <div class="ul-box">
+        <ul class="select-box">
+            <li  onclick="Tab()" data-index="0" class="active">详情</li>
+            <li  onclick="Tab()" data-index="1">目录</li>
+        </ul>
+        <div data-index="1" class="bottom-line">
+        </div>
+    </div>
+    <div class="book-detail-label">
+        <ul>
+        </ul>
+    </div>
+    <div class="selectContent">
+        <div class="intro">
+            <!-- <div class="zhankai" onclick="zhankai()">展开</div> -->
+            <p class="yincang ziti"></p>
+            <p class="zhankai" onclick="zhankai()">展开</p>
+        </div>
+        <div class="mulu cang">
+            <ul>
+                <li>
+                    <p><span>小巷人家</span><span>第一集</span><span>冰箱和扁担</span></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
 </body>
 <script src="./js/reset.js"></script>
 <script src="./js/detail.js"></script>
+
 </html>

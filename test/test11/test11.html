@@ -8,8 +8,6 @@
 
 </head>
 <body>
-        
-    
     <div class="liaotian">
         <ul></ul>
     </div>
@@ -19,53 +17,116 @@
     </div>
 </body>
 <script>
-  var ul=document.querySelector('.liaotian ul')
-  var text=document.querySelector('textarea')
-    function getValue(){
-        var value=document.querySelector('textarea').value
-        var div=document.querySelector('.liaotian')
-        const url = 'https://api.siliconflow.cn/v1/chat/completions';
-        const apiKey = 'sk-epttdgplwzbhjcyeqioommvxzpxarpooxpyvsisyrtjbpthv'; 
-        const requestData = {
-            model: "Qwen/QwQ-32B",
-            messages: [{ role: "user", content: `${value}` }], 
-            max_tokens: 1000,
-            temperature: 0.7
-        };
-        ul.innerHTML+=`
-        <li class="user"><span>${value}</span></pli>
-        `
-        text.value=''
-        fetch(url, {
-  method: 'POST',
-  headers: {
-    'Authorization': `Bearer ${apiKey}`,
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(requestData)
-})
-  .then(async (response) => {
-    if (!response.ok) {
-      const errorData = await response.json(); 
-      throw new Error(`HTTP error! status: ${response.status}, details: ${JSON.stringify(errorData)}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Success:', data);
-        ul.innerHTML+=`
-        <li class="Ai">
-          ${data.choices[0].message.content}</li>
-        `
-        console.log(data.choices[0].message.content)
-  })
-  .catch(error => {
-    console.error('Full Error:', error);
-  });
-       
-   
+ var ul = document.querySelector('.liaotian ul');
+var text = document.querySelector('textarea');
 
+function getValue() {
+    var value = document.querySelector('textarea').value;
+    if (!value.trim()) return; // 如果输入为空则不发送
+    
+    const url = 'https://api.siliconflow.cn/v1/chat/completions';
+    const apiKey = 'sk-epttdgplwzbhjcyeqioommvxzpxarpooxpyvsisyrtjbpthv';
+    
+    // 添加用户消息
+    ul.innerHTML += `<li class="user"><span>${value}</span></li>`;
+    text.value = '';
+    scrollToBottom(); // 发送后立即滚动
+    
+    // 创建AI回复的li元素
+    const aiLi = document.createElement('li');
+    aiLi.className = 'Ai';
+    aiLi.innerHTML = '<span class="typing-cursor">|</span>';
+    ul.appendChild(aiLi);
+    scrollToBottom(); // 添加AI回复容器后滚动
+    
+    const requestData = {
+        model: "Qwen/QwQ-32B",
+        messages: [{ role: "user", content: `${value}` }],
+        max_tokens: 1000,
+        temperature: 0.7,
+        stream: true
+    };
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(async (response) => {
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let fullResponse = '';
+        let buffer = '';
+        
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop();
+            
+            for (const line of lines) {
+                if (line.trim() === '') continue;
+                const message = line.replace(/^data: /, '');
+                if (message === '[DONE]') {
+                    aiLi.querySelector('.typing-cursor')?.remove();
+                    return;
+                }
+                
+                try {
+                    const parsed = JSON.parse(message);
+                    const content = parsed.choices[0]?.delta?.content || '';
+                    if (content) {
+                        fullResponse += content;
+                        aiLi.innerHTML = `<span>${fullResponse}</span><span class="typing-cursor">|</span>`;
+                        scrollToBottom(); // 每次更新内容后滚动
+                    }
+                } catch (err) {
+                    console.error('Error parsing message:', err);
+                }
+            }
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        aiLi.innerHTML = `<span style="color: red;">请求出错: ${error.message}</span>`;
+        scrollToBottom();
+    });
 }
+
+// 自动滚动函数
+function scrollToBottom() {
+    var ul = document.querySelector('.liaotian ul');
+    // 使用requestAnimationFrame确保在DOM更新后执行
+    requestAnimationFrame(() => {
+        ul.scrollTop = ul.scrollHeight;
+        // 如果需要平滑滚动，可以使用以下替代方案：
+        // ul.scrollTo({ top: ul.scrollHeight, behavior: 'smooth' });
+    });
+}
+
+// 添加CSS样式
+const style = document.createElement('style');
+style.textContent = `
+    .liaotian ul {
+        overflow-y: auto;
+        max-height: 80vh; /* 设置最大高度 */
+    }
+    .typing-cursor {
+        animation: blink 1s infinite;
+    }
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
 </script>
 <script src="./js/reset.js"></script>
 </html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            margin: auto;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        绘制直线
+            定义开始坐标和结束的坐标
+            需要使用stroke()方法来绘制线条
+
+            moveTo()
+                把路径移动到画布中的指定点  但是不创建线条
+
+            lineTo()
+                添加一个新点  然后在画布中创建从该点到指定点的线条
+
+            arc()
+                绘制一个圆
+                arc(x,y,r,sAngle,eAngle,counterclockwise)
+                x,y 圆心的坐标
+                r  圆的半径
+                sAngle,eAngle  起始角(三点钟方向作为0度) 结束角
+                counterclockwise  可选  规定是顺时针还是逆时针绘图  false=顺时针  true=逆时针
+
+            fill()
+                填充当前绘图
+
+            stroke()
+                描边当前绘图
+
+            lineWidth
+                线的粗细
+
+            beginPath()
+                开始新的绘画（路径）
+
+            ellipse()
+                绘制椭圆
+                ellipse(x,y,radiusx,radiusy,rotation,sAngle,eAngle,counterclockwise)
+                x,y  圆心坐标
+                radiusx,radiusy  水平半径 垂直半径
+                rotation   旋转角度
+                sAngle,eAngle   起始角  结束角
+                counterclockwise  可选  规定是顺时针还是逆时针绘图  false=顺时针  true=逆时针
+
+
+    -->
+    <canvas id="canvas" width="800" height="500"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas")
+    var ctx=canvas.getContext('2d')
+    // console.log(ctx)
+    // ctx.moveTo(0,0)
+    // ctx.lineTo(100,100)
+    // ctx.stroke()
+
+    // 等腰三角形
+    // ctx.moveTo(400,50)
+    // ctx.lineTo(200,200)
+    // ctx.lineTo(600,200)
+    // ctx.lineTo(400,50)
+    // ctx.stroke()
+
+    // ctx.arc(200,200,50,0,2*Math.PI)
+    // ctx.fillStyle='red'
+    // ctx.fill()
+    // ctx.strokeStyle="green"
+    // ctx.lineWidth=5
+    // ctx.stroke()
+
+    // ctx.beginPath()
+    // ctx.arc(208,208,2,0,2*Math.PI)
+    // ctx.fillStyle='black'
+    // ctx.fill()
+
+    // 画个半圆
+    // ctx.arc(200,200,100,Math.PI/6,Math.PI/6*5)
+    // ctx.strokeStyle="green"
+    // ctx.lineWidth=5
+    // ctx.stroke()
+
+    // 绘制椭圆
+    // ctx.ellipse(200,200,200,180,0,0,2*Math.PI)
+    // ctx.fillStyle='skyblue'
+    // ctx.fill()
+    // ctx.strokeStyle="black"
+    // ctx.lineWidth=2
+    // ctx.stroke()
+
+    // ctx.beginPath()
+    // ctx.ellipse(200,235,180,150,0,0,2*Math.PI)
+    // ctx.fillStyle='white'
+    // ctx.fill()
+</script>
+</html>

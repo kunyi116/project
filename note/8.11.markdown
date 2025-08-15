@@ -1,0 +1,108 @@
+闭包
+    防止变量跑到外层作用域中 发生冲突
+    缺点
+        使用闭包的时候，
+
+自执行函数
+    不需要调用就可以执行 自执行函数通常是定义之后立即执行 以后不会再调用 
+    创建自执行函数
+        语法：
+            (function 函数名(){
+                //代码
+            })()
+
+            !function 函数名(){
+                //代码
+            }()
+
+            +function 函数名(){
+                //代码
+            }()
+
+            -function 函数名(){
+                //代码
+            }()
+
+            ~function 函数名(){
+                //代码
+            }()
+
+            void function 函数名(){
+                //代码
+            }()
+
+            new function 函数名(){
+                //代码
+            }()
+    自执行函数可以用来保存变量的作用域 防止变量污染全局变量
+
+继承
+    js中继承通过原型来实现
+    首先创建一个父级构造函数
+
+canvas
+    canvas标签定义图形比如图标或者图像 但是canvas只是一个容器 必须使用js来控制图形
+        canvas属性
+            width px
+            height  px
+            两个属性设置canvas画布宽高 默认为矩形
+            getContext('2d')  设置当前为平面绘画
+            fillStyle
+                填充样式
+                该属性可以是css颜色 渐变或者图形 默认值#000
+                fillRece(x,y,width,height)
+                    填充
+                    前两个参数为在x轴与y轴的位置 后两个为当前图形的宽高
+            strokeStyle
+                描边样式
+                该属性可以是css颜色 渐变或者图形 默认值#000
+            clearRect(x,y,width,height)
+
+            fill()  填充当前绘图
+            stroke() 描边当前绘图
+            lineWidth 线的粗细
+            beginPath()  开始新的路径进行绘画(每在一个已画好的图形中开始新的绘画要使用此方法)
+
+            绘制直线
+                定义开始坐标与结束坐标 需要使用stroke()方法来绘制线条
+                moveTo()
+                    把路径移动到画布中的指定点 但是不创建线条
+                lineTo()
+                    添加一个新点 然后在画布中创建从该点到指定点的线条
+            绘制圆形
+                绘制一个圆
+                    arc(x,y,r,sAngle,eAngel,counterclockwise)
+                        x,y 是圆心的坐标
+                        r是圆的半径
+                        sAngel,eAngel 起始角(三点钟方向作为0度)  结束角  (结束角使用Math.PI进行计算,Math.PI为180度)
+                        counterclockwise  可选  规定是顺时针还是逆时针绘图  false=顺时针  true=逆时针
+            绘制椭圆
+                ellipse()
+                    绘制椭圆
+                    ellipse(x,y,radiusx,radiusy,rotation,sAngle,eAngle,counterclockwide)
+                    x,y 圆心坐标
+                    radiusx,radiusy  水平半径 垂直半径
+                    rotation   旋转角度
+                    sAngle,eAngle   起始角  结束角
+                    counterclockwise  可选  规定是顺时针还是逆时针绘图  false=顺时针  true=逆时针
+
+            贝塞尔曲线
+                两种
+                    二次方贝塞尔曲线
+                        quadraticCurveTo(cpx,cpy,x,y)
+                        cpx cpy 贝塞尔曲线控制x,y坐标
+                        x  y  结束点x,y坐标
+                        二次贝塞尔曲线需要两个点 第一个点用于二次方贝塞尔曲线计算的控制点 第二个是曲线的结束点
+                    三次贝塞尔曲线
+                    bezierCurveTo(cpx1,cpy1,cpx2,cpy2,x,y)
+                    cpx1  cpy1  第一次贝塞尔曲线控制点的坐标
+                    cpx2  cpy2  第二次贝塞尔曲线控制点的坐标
+                    x  y  结束点x,y的坐标
+                    三次贝塞尔曲线 需要三个点 如果在完成一个贝塞尔曲线绘制以后没有新增绘画路径 下一个贝塞尔曲线会将上一个贝塞尔曲线的结束点当作起始点继续绘制
+                    曲线的开始点 是当前路径的最后一个点 如果路径不存在 可以使用beginPath() moveTo() 定义开始点
+
+            canvas 绘制文本
+                font 定义字体
+                fillText(text,x,y) 实心
+                strokeText(Text,x,y) 空心
+                

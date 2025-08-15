@@ -1,0 +1,1 @@
+fetch('https://api.cenguigui.cn/api/tomato/api/detail.php?book_id=7227111743825120259').then(res)

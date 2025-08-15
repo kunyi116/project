@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        自执行函数
+            不需要调用就可以直接执行的函数
+
+            自执行函数通常是定义之后立即执行 以后不在会调用   所以我们一般在声明时候  不写函数名 
+            因此自执行函数也叫做匿名函数
+
+        创建自执行函数
+            语法：
+                (function 函数名() {
+                    // 代码
+                })()
+
+                !function 函数名() {
+                    // 代码
+                }()
+
+                +function 函数名() {
+                    // 代码
+                }()
+                
+                -function 函数名() {
+                    // 代码
+                }()
+
+                ~function 函数名() {
+                    // 代码
+                }()
+
+                void function 函数名() {
+                    // 代码
+                }()
+
+                new function 函数名() {
+                    // 代码
+                }()
+
+        自执行函数的作用
+            可以用来保存变量的作用域 防止变量污染全局变量
+    -->
+    <ul>
+        <li>这是第一个</li>
+        <li>这是第二个</li>
+        <li>这是第三个</li>
+        <li>这是第四个</li>
+        <li>这是第五个</li>
+        <li>这是第六个</li>
+    </ul>
+</body>
+<script>
+    var li=document.querySelectorAll('li')
+    for(var i=0; i<li.length; i++) {
+        // li[i].onclick=function() {
+        //     console.log(i)
+        // }
+        (function(i) {
+            li[i].onclick=function() {
+                console.log(i)
+            }
+        })(i)
+
+    }
+
+    // (function demo() {
+    //     console.log(1111)
+    // })()
+    // // demo()
+
+    // !function test() {
+    //     console.log(2222)
+    // }()
+
+    // (function(a,b) {
+    //     console.log(a+b)
+    // })(1,2)
+</script>
+</html>

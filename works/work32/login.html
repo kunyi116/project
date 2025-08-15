@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>注册</title>
+</head>
+<body>
+    <div class="biaodan">
+        <div class="biaodan-box">
+            <div class="title">
+                <p>新用户注册</p>
+            </div>
+            <div class="yonghu">
+                <p>用户名：</p>
+                <div class="ipt">
+                    <input oninput="catchValue1()" onfocus="Col()" onblur="noCol()" type="text" placeholder="输入你的用户名(4-12位字母开头 数字字母和下划线组成)">
+                    <p class="p1"></p>
+                </div>
+            </div>
+            <div class="mima">
+                <p>密码：</p>
+                <div class="ipt">
+                    <input oninput="catchValue2()" onfocus="Col()"onblur="noCol()" type="psw" placeholder="输入你的密码(6-12位字母+数字+特殊符号组成)">
+                    <p class="p2"></p>
+                </div>
+            </div>
+            <div class="queren">
+                <p>确认密码：</p>
+                <div class="ipt">
+                    <input oninput="catchValue3()" onfocus="Col()" onblur="noCol()" type="psw" placeholder="请确认你的密码">
+                    <p class="p3"></p>
+                </div>
+            </div>
+            <div class="youxiang">
+                <p>邮箱：</p>
+                <div class="ipt">
+                    <input oninput="catchValue4()" onfocus="Col()" onblur="noCol()" type="text" placeholder="输入你的邮箱(qq邮箱/163邮箱/新浪邮箱)">
+                    <p class="p4"></p>
+                </div>
+            </div>
+            <div class="phone">
+                <p>手机号：</p>
+                <div class="ipt">
+                    <input oninput="catchValue5()" onfocus="Col()" onblur="noCol()" type="text" placeholder="输入你的可用手机号">
+                    <p class="p5"></p>
+            </div>
+                </div>
+            <div class="shenfen">
+                <p>身份证号：</p>
+                <div class="ipt">
+                    <input oninput="catchValue6()" onfocus="Col()" onblur="noCol()" type="text" placeholder="仅支持河南省内有效身份证号">
+                    <p class="p6"></p>
+                </div>
+            </div>
+            <div onclick="getValue()" class="btn-box">
+                <button class="anniu">注册</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/login.js"></script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        贝塞尔曲线
+            两种
+                二次方贝塞尔曲线
+                    quadraticCurveTo(cpx,cpy,x,y)
+                        cpx
+                        cpy
+                            贝塞尔曲线控制点x y坐标
+                        x
+                        y
+                            结束点x y坐标
+
+                    二次贝塞尔曲线需要两个点 第一个点用于二次方贝塞尔曲线计算中的控制点
+                    第二个是曲线的结束点
+
+                三次方贝塞尔曲线
+                    bezierCurveTo(cpx1,cpy1,cpx2,cpy2,x,y)
+                        cpx1
+                        cpy1
+                            第一次贝塞尔曲线控制点x y坐标
+                        cpx2
+                        cpy2
+                            第二次贝塞尔曲线控制点x y坐标
+                        x
+                        y
+                            结束点x y坐标
+
+                        三次方贝塞尔曲线 需要三个点 向当前路径添加一个控制点
+                        第三个值是路径的结束点
+                        第二个值路径的一个控制点
+
+                        曲线的开始点是当前路径最后一个点
+                        如果路径不存在 可以使用beginPath和moveTo定义开始点
+
+                canvas绘制文本
+                    font  定义字体
+                    fillText(text,x,y)
+                        实心
+
+                    strokeText(text,x,y)
+                        空心
+
+    -->
+    <canvas width="800" height="500" style="border: 1px solid red;"></canvas>
+</body>
+<script>
+    var canvas=document.querySelector('canvas')
+    var ctx=canvas.getContext('2d')
+
+    // ctx.beginPath()
+    // ctx.moveTo(50,30)
+    // ctx.lineTo(50,30)
+    // ctx.lineWidth=3
+    // ctx.quadraticCurveTo(125,200,200,20)
+    // ctx.stroke()
+
+    // ctx.beginPath()
+    // ctx.moveTo(0,200)
+    // ctx.bezierCurveTo(40,-150,180,400,240,200)
+    // ctx.stroke()
+    // ctx.beginPath()
+    // ctx.moveTo(240,200)
+    // ctx.bezierCurveTo(280,-150,420,400,480,200)
+    // ctx.stroke()
+
+    ctx.font="60px 微软雅黑"
+    // ctx.fillStyle="red"
+    // ctx.fillText('张三',100,100)
+    ctx.strokeStyle='red'
+    ctx.strokeText('张三',100,100)
+</script>
+</html>

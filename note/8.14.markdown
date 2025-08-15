@@ -1,0 +1,76 @@
+拓展运算符
+    格式 
+        ...
+    作用：去除数组外层中括号或者去除对象外层的花括号
+
+    对象拷贝
+        object.assign 复制对象
+        object.assign({},要复制的对象名)
+    promise 使用
+        一个异步(async)请求
+        三种状态
+            进行中(pending)
+            成功(fulfilled)
+            失败(rejected)
+        这三种状态只有两种结果
+            进行中到成功
+            进行中到失败
+        基于promise异步请求的两种用法
+            axios
+                数据请求方法
+                    get post put delets ...
+                        get 一般用于请求接收数据
+                        post 一般用于向后台传递数据(登录 注册 表单提交等)
+                        put 一般用于修改数据
+                        delete 一般用于删除数据
+            axios使用
+                get请求
+                axios.get('url',{
+                    params:{
+                        参数名：参数值
+                    }
+                }).then(res=>{
+
+                }).catch(err=>{
+                    console.log(err)
+                })
+                或者
+                axios.get('url?参数名：参数值').then(res=>{
+
+                }).catch(err=>{
+                    console.log(err)
+                })
+                post请求 (post请求如果有参数必须使用花括号不能在请求Api处添加?分割)
+                axios.post('url',{
+                    参数名1：参数值，
+                    参数名2：参数值，
+                }).then(res=>{
+
+                }).catch(err=>{
+                    console.log(err)
+                })
+                axios({
+                    method: 'post', (这里的post是请求方式，可以换成get delete put...)
+                    url: '',
+                    data: {
+                        参数名1: 参数值,
+                        参数名2: 参数值
+                    }
+                });
+                fetch 原生post数据请求
+                    fetch("url",{
+                        method:'Post',
+                        headers:{'Content-Type',application/json},
+                        body:JSON.stringify({
+                            参数名：参数值，
+                            参数名：参数值
+                        })
+                    }).then
+
+                async await 异步请求
+                    格式
+                        async function 函数名(){
+                            await 执行语句1;
+                            await 执行语句2;
+                            ...
+                        }

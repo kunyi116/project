@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+        width: 400px;
+        margin: auto;
+    }
+    li{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+       
+    }
+    ul li+li{
+        margin-top: 10px;
+    }
+    .title
+    {
+        width: 100px;
+        height: 60px;
+    }
+    p{
+        width: 50px;
+        height: 30px;
+    }
+</style>
+<body>
+    <div class="title"><p>标题</p></div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div></div>
+</body>
+<script>
+   const div=document.querySelector('div')
+   const text='这是一段很长这是一段很长这是一段很长这是一段很长这是一段很长的话'
+   let i=0
+   function typeWriter(){
+    if(i<text.length){
+        div.innerHTML+=text.charAt(i)
+        i++
+        setTimeout(typeWriter,100)
+        }
+   }
+   typeWriter()
+</script>
+</html>

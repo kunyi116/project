@@ -1,0 +1,65 @@
+
+    Set
+        es6提供新的数据结构Set 它类似于数组 但是成员的值是唯一的 没有重复值 Set本身就是一个构造函数 用来生成Set数据结构 经常用来数组去重
+            格式
+                new Set([值1,值2,.....])
+                属性
+                    size 可以返回Set实例的成员总数 (相当于length但是这里不能用length)
+                方法
+                    add(value)
+                        添加某个值 返回Set结构本身
+                    delete(value)
+                        删除某个值 返回一个布尔值 表示删除是否成功
+                    has(value)
+                        返回一个布尔值 表示该值是否为Set的一个成员
+                    claer()
+                        清除所有成员 该方法没有返回值
+                遍历
+                    keys() 返回键名
+                    values() 返回键值
+                    entries() 返回键值对
+                    forEach() 
+                    for...in不仅可以遍历数组 还可以用来遍历对象 (经常用来遍历对象)
+                        格式
+                            for(变量 in 对象/数组){
+
+                            }
+                            这里的变量是对应下标索引
+                    for....of只能用来遍历数组
+                        格式
+                            for(变量 of 数组){
+
+                            }
+                            这里的变量是数组的每一项
+class 类
+    我们可以通过class关键字来定义一个类 es6类等价于es5语法中构造函数
+    格式
+        class 类名 {
+            //类名首字母一般都大写
+            constructor(参数1，参数2){
+                //构造器
+                this.属性名=参数1
+                this.属性名=参数2
+            }
+            方法名(){
+
+            }
+        }         
+        constructor方法是类的默认方法 通过new命令生成对象实例时 自动调用该方法 一个类必须有constructor方法 如果没有写constructor
+        class 类名{
+
+        }等价于
+        class 类名{
+            constructor(){
+
+            }
+        }
+        继承
+            使用extends
+                    class可以通过extends关键字实现继承
+                    格式
+                        class 子类 extends 父类{
+
+                        }
+git工具使用
+    

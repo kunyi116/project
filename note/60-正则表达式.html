@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        正则表达式
+            用于匹配字符串中字符组合的模式 校验数据格式是否符合要求
+            通常用于用户输入合法性的校验
+
+            创建正则
+                两种方式：
+                    1.字面量(使用最多)
+                    使用一个正则表达式字面量 包含在斜杠之间组成 如下：
+                    var reg=/abc/;  // 这表示字符当中匹配'abc'这一段字符
+
+                    2.RegExp对象创建正则
+                    var reg=new RegExp('abc')
+
+            修饰符
+                创建正则时候 可以添加修饰符让正则可以匹配整个字符串或者忽略大小写 修饰符可以单独使用 也可以同时使用
+
+                g
+                    /abc/g    // 全局匹配abc字符串
+
+                i
+                    /abc/i   // 忽略大小写
+
+            使用正则表达式
+                exec()
+                    在一个指定的字符串中执行一个搜索匹配 匹配成功返回一个结果的数组 
+                    失败返回null
+                    结果中包含一些内容：
+                        groups  一个捕获数组或者undefined(如果没有定义命名捕获组)
+                        index   匹配结果的开始位置
+                        input   搜索的字符串
+
+                    格式：
+                        regObj.exec(str)
+                        regObj 创建出来的正则对象
+                        str 要匹配正则表达式的字符串
+
+
+                test()
+                    执行一个检索 用来查看正则表达式与指定的字符串是否匹配  成功返回true  失败返回false
+                    格式：
+                        regObj.test(str)
+
+                match()
+                    检索返回一个字符串匹配正则表达式的结果
+                    语法：
+                        str.match(regObj)
+
+                search()
+                    执行正则表达式和String对象之间的一个搜索匹配
+                    匹配成功 返回正则表达式字符串中首次匹配的索引 该方法中修饰符 g 是无效的
+                    匹配失败 返回-1
+                    语法：
+                        str.search(regObj)
+
+                replace()
+                    返回一个由替换值替换部分或者所有模式匹配项后的新的字符串
+                    语法：
+                        str.replace(regExp | substr , newSubStr | function)
+
+                        regExp
+                            一个正则对象或者字面量  该正则所匹配的内容会被第二个参数返回值所替换掉
+                        
+                        subStr
+                            一个被newSubStr替换的字符串  只是一个字符串 不能把它看做正则表达式
+
+                        newSubStr
+                            用于替换第一个参数在原字符串匹配部分的字符
+                        
+                        function
+                            一个用来创建新字符串的函数
+
+                
+    -->
+    <!-- <input type="text">
+    <button onclick="send()">发表</button>
+    <p></p> -->
+</body>
+<script>
+    // var ipt=document.querySelector("input")
+    // var reg=/吃饭/g
+    // var p=document.querySelector('p')
+    // function send() {
+    //     p.innerHTML=ipt.value.replace(reg,'**')
+    // }
+
+    // var reg=/abc/
+
+    // var reg1=new RegExp('abc')
+    // console.log(reg1)
+
+    // var str='hello world Object'
+    // var reg=/o/gi
+
+    // console.log(str.match(reg))
+
+
+    // exec
+    // var reg=/张三/g
+    // console.log(reg.exec('张三你好 张三饿了'))   // 
+
+    // test
+    // var reg=/abc/
+    // console.log(reg.test('abcdefg'))  // true
+    // console.log(reg.test('hijklmn'))  // false
+
+    // match
+    // var reg=/abc/
+    // var reg1=/abc/g
+    // var reg2=/abc/i
+    // var reg3=/abc/gi
+
+    // var str='Abcabcdabce'
+    // console.log(str.match(reg))
+    // console.log(str.match(reg1))
+    // console.log(str.match(reg2))
+    // console.log(str.match(reg3))
+
+    // search
+    // var reg=/abc/g
+    // var str='1abcdabce'
+    // console.log(str.search(reg))
+
+    // replace
+    // var str='hello world'
+    // var reg=/hello/
+    // console.log(str.replace(reg, 'javascript'))
+    // console.log(str.replace(reg, function() {
+    //     return 'python'
+    // }))
+</script>
+</html>

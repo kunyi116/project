@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #06164A;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    div{
+        border: 1px solid rgba(25, 186, 139, 0.17);
+    }
+}
+</style>
+<body>
+    <div class="content">
+        <div class="left">
+            <div id="zhu" style="width: 406px;height:245px;"></div>
+            <div id="xian" style="width: 406px;height:245px;"></div>
+            <div id="huan" style="width: 406px;height:400px;"></div>
+        </div>
+        <div class="center">
+            <div id="main" style="width: 476px;height:642px;"></div>
+        </div>
+        <div class="right">
+            <div id="double" style="width: 406px;height:245px;"></div>
+            <div id="doublecolor" style="width: 406px;height:245px;"></div>
+            <div id="doublebing" style="width: 406px;height:400px;"></div>
+        </div>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+var ROOT_PATH = 'https://echarts.apache.org/examples';
+var chartDom = document.getElementById('main');
+var myChart = echarts.init(chartDom);
+var option;
+myChart.showLoading();
+$.get('https://geo.datav.aliyun.com/areas_v3/bound/410200_full.json', function (geoJson) {
+  myChart.hideLoading();
+  echarts.registerMap('kaifeng', geoJson);
+  myChart.setOption(
+    (option = {
+      visualMap: {
+        show:false,
+        min: 10,
+        max: 90,
+        text: ['High', 'Low'],
+        realtime: false,
+        calculable: true,
+        inRange: {
+          color: ['red','orange', 'yellow', 'green','blue','purple','pink','brown','yellowgreen']
+        }
+      },
+      series: [
+        {
+          name: 'kaifeng',
+          type: 'map',
+          map: 'kaifeng',
+          label: {
+            show: true,
+            color: '#fff'
+          },
+          data: [
+            { name: '兰考县', value: 10 },
+            { name: '杞县', value: 20 },
+            { name: '通许县', value: 30 },
+            { name: '尉氏县', value: 40 },
+            { name: '祥符区', value: 50 },
+            { name: '禹王台区', value: 60 },
+            { name: '鼓楼区', value: 70 },
+            { name: '顺河回族区', value: 80 },
+            { name: '龙亭区', value: 90 }
+          ],
+        }
+      ]
+    })
+  );
+});
+option && myChart.setOption(option);
+</script>
+<script>
+var chartDom1 = document.getElementById('zhu');
+var myChart1 = echarts.init(chartDom1);
+var option;
+option = {
+    title: {
+    text: '柱状图-各行业程序员数量 2019 2020',
+    left: 'center',
+    top: '20',
+        textStyle: { 
+        color: '#fff', 
+        fontStyle: 'normal', 
+        fontSize: 16 
+        }
+    },
+    color: ['#2f89cf'],
+    tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true,
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['旅游行业', '教育培训', '游戏行业', '医疗行业', '电商行业', '社交行业', '金融行业'],
+        axisLabel: {
+            textStyle: {
+            color: '#ffffff'
+            }
+        },
+        axisTick: {
+        alignWithLabel: true
+      },
+      axisLine: {
+        show: true,
+        lineStyle: {
+        color: '#fff' 
+        }
+        }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      axisLabel:{
+        textStyle: {
+        color: '#ffffff' 
+            }
+        }
+    },
+    
+  ],
+  series: [
+    {
+      name: 'Direct',
+      type: 'bar',
+      barWidth: '20',
+      data: [300, 400, 350, 800, 1800, 1400, 700],
+      itemStyle:{
+        normal:{
+            barBorderRadius: [5, 5, 5, 5],
+        }
+      }
+    }
+  ]
+};
+option && myChart1.setOption(option);
+</script>
+<script>
+var chartDom2 = document.getElementById('xian');
+var myChart2 = echarts.init(chartDom2);
+var option;
+
+option = {
+  legend: {
+        data: ['新增项目', '新增技能'],
+         textStyle: {
+            color: '#ffffff'
+            }
+        
+    },
+    title: {
+        text: '折线图-学习变化',
+        left: 'center',
+        top: '20',
+        textStyle: {
+        fontSize: 18,
+        color:'#fff'
+        }
+    },
+     tooltip: {
+        show: true, 
+        trigger: 'axis', // 触发类型，默认数据触发，见下图，可选为：'item' | 'axis'
+    },
+  xAxis: {
+    
+    type: 'category',
+    data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月','8月','9月','10月','11月','12月'],
+     textStyle: {
+            color: '#ffffff'
+            }
+  },
+  
+  yAxis: {
+    
+    type: 'value'
+  },
+  series: [
+    {
+      name:'新增技能',
+      data: [40, 64, 191, 324, 290, 330, 310,213,180,200,180,79],
+      type: 'line',
+      smooth: true,
+      
+      itemStyle:{
+        color:'green'
+      }
+    },
+    {
+      name:'新增项目',
+      data: [24, 40, 101, 134, 90, 230, 210,230,120,230,210,120],
+      type: 'line',
+      smooth: true,
+      itemStyle:{
+        color:'red'
+      }
+    }
+  ]
+};
+
+option && myChart2.setOption(option);
+</script>
+<script>
+    var chartDom3 = document.getElementById('huan');
+var myChart3 = echarts.init(chartDom3);
+var option;
+
+option = {
+   title: {
+        text: '饼形图-工程师年龄分布',
+        left: 'center',
+        top: '5',
+        textStyle: {
+        fontSize: 18,
+        color:'#fff'
+        }
+    },
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    bottom: '0',
+    left: 'center'
+  },
+  series: [
+    {
+      name: '年龄分布',
+      type: 'pie',
+      radius: ['40%', '70%'],
+      avoidLabelOverlap: false,
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 14,
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 1, name: '0岁以下' },
+        { value: 4, name: '20-29岁' },
+        { value: 2, name: '30-39岁' },
+        { value: 2, name: '40-49岁' },
+        { value: 1, name: '50岁以上' },
+        
+      ],
+       textStyle: {
+            color: '#ffffff'
+            }
+    }
+  ]
+};
+option && myChart3.setOption(option);
+</script>
+<script>
+    var chartDom4 = document.getElementById('double');
+var myChart4 = echarts.init(chartDom4);
+var option;
+
+option = {
+  title: {
+    text: '柱状图-开发技能',
+     textStyle: {
+        fontSize: 18,
+        color:'#fff'
+        }
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {},
+  xAxis: {
+    type: 'value',
+    boundaryGap: [0, 0.01],
+     textStyle: {
+            color: '#ffffff'
+            }
+  },
+  yAxis: {
+    type: 'category',
+    data: ['javascipt', 'Vue', 'jQuery', 'HTML5', 'CSS3']
+  },
+  series: [
+    {
+      
+      type: 'bar',
+      data: [ 100, 100, 100, 100, 100],
+      itemStyle: {
+        
+    
+    borderWidth: 3,
+    borderColor: '#000'
+    },
+    },
+    {
+      
+      type: 'bar',
+      data: [90, 80, 75, 65, 65],
+      barGap: '-100%',
+       itemStyle: {
+        
+    color: '#64DB9B',
+    borderWidth: 3,
+    borderColor: '#000'
+    },
+      color: ['#2f89cf']
+    }
+  ]
+};
+
+option && myChart4.setOption(option);
+
+</script>
+<script>
+    var chartDom5 = document.getElementById('doublecolor');
+var myChart5 = echarts.init(chartDom5);
+var option;
+
+option = {
+  title: {
+        text: '折线图-公司人员流动',
+        left: 'center',
+        top: '5',
+        textStyle: {
+        fontSize: 18,
+        color:'#fff'
+        }
+    },
+  color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    data: ['流入', '流出']
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['01', '03', '05', '07', '09', '12', '16', '18', '20', '22', '24', '26','28','30']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: '流入',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(1, 191, 236)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [140, 232, 101, 264, 90, 340, 250,140, 232, 101, 264, 90, 340, 250]
+    },
+    {
+      name: '流出',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(0, 221, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(77, 119, 255)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [120, 282, 111, 234, 220, 340, 310,120, 282, 111, 234, 220, 340, 310]
+    },
+    
+  ]
+};
+
+option && myChart5.setOption(option);
+
+</script>
+<script>
+    var chartDom6 = document.getElementById('doublebing');
+var myChart6 = echarts.init(chartDom6);
+var option;
+
+option = {
+  title: {
+    text: '饼形图-各地区程序员占比',
+    left: 'center',
+    top: 20,
+    textStyle: {
+      color: '#fff'
+    }
+  },
+  tooltip: {
+    trigger: 'item'
+  },
+  visualMap: {
+    show: false,
+    min: 80,
+    max: 600,
+    inRange: {
+      colorLightness: [0, 1]
+    }
+  },
+  series: [
+    {
+      name: '点位统计',
+      type: 'pie',
+      radius: '55%',
+      center: ['50%', '50%'],
+      data: [
+        { value: 335, name: '杭州' },
+        { value: 310, name: '深圳' },
+        { value: 274, name: '广州' },
+        { value: 235, name: '西安' },
+        { value: 400, name: '北京' },
+        { value: 274, name: '上海' },
+        { value: 235, name: '其他' },
+        { value: 400, name: '武汉' },
+      ].sort(function (a, b) {
+        return a.value - b.value;
+      }),
+      roseType: 'radius',
+      label: {
+        color: 'rgba(255, 255, 255, 0.3)'
+      },
+      labelLine: {
+        lineStyle: {
+          color: 'rgba(255, 255, 255, 0.3)'
+        },
+        smooth: 0.2,
+        length: 10,
+        length2: 20
+      },
+      itemStyle: {
+        color: '#c23531',
+        shadowBlur: 200,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+      },
+      animationType: 'scale',
+      animationEasing: 'elasticOut',
+      animationDelay: function (idx) {
+        return Math.random() * 200;
+      }
+    }
+  ]
+};
+
+option && myChart6.setOption(option);
+
+</script>
+</html>

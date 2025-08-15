@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        防抖与节流
+            防抖的思想是：在事件被触发后，延迟指定时间才执行事件处理函数，如果在这段时间内事件再次被触发，则重新计时。
+
+            节流的思想是：在一定时间内只允许事件处理函数执行一次，无论事件触发了多少次。
+    -->
+    <input type="text" oninput="search()">
+    <button onclick="test()">触发</button>
+</body>
+<script>
+    // 防抖
+    // var t=null
+    // var test=function() {
+    //    if(t) {
+    //         clearTimeout(t)
+    //    }
+    //    t=setTimeout(function() {
+    //         console.log('被触发')
+    //    },2000)
+    // }
+
+    // 节流
+    // var canRun=true   // 设置一个标志 表示是否可以执行函数
+    // var test=function() {
+    //     if(!canRun) return   //如果不能执行 直接返回
+    //     canRun=false
+    //     setTimeout(function() {
+    //         console.log('被触发')
+    //         canRun=true    // 时间间隔结束之后 重新设置可以执行
+    //     },1000)
+    // }
+
+    var t=null
+    var search=function() {
+        if(t) {
+            clearTimeout(t)
+       }
+       var a=event
+       t=setTimeout(function() {
+            console.log(a.target.value)
+       },1000)
+    }
+</script>
+</html>

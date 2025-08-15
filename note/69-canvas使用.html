@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        canvas介绍
+            canvas标签定义图形 比如图标或者图像
+            但是canvas只是一个容器  你必须使用js绘制图形
+
+            canvas属性
+                width       px
+                height      px
+                两个属性可以设置canvas画布宽度和高度  默认画布矩形
+
+                fillStyle
+                    填充样式
+                    该属性可以是css颜色 渐变或者图形 默认值#000
+                fillRect(x,y,width,height)
+                    填充
+                    前两个参数表示 当前图形在画布中xy轴的位置
+                    后两个参数表示 当前图形的宽度和高度
+                strokeRect(x,y,width,height)
+                    描边
+                    前两个参数表示 当前图形在画布中xy轴的位置
+                    后两个参数表示 当前图形的宽度和高度
+                strokeStyle
+                    描边样式
+                    该属性可以是css颜色 渐变或者图形 默认值#000
+                clearRect(x,y,width,height)
+                    在给定的矩形内清除指定的像素
+                    x y要清除矩形左上角x y坐标
+                    width height要清除矩形的宽度和高度
+
+
+    -->
+
+    <canvas width="500" height="500"></canvas>
+</body>
+<script>
+    var canvas=document.querySelector('canvas')
+    var ctx=canvas.getContext('2d')   // 设置绘图环境为2d环境
+
+    ctx.fillStyle="green" // 绘制一个红色背景的图形
+    ctx.fillRect(50,50,100,100)
+    ctx.strokeStyle="red"
+    // ctx.fillRect(200,200,200,100)
+    ctx.strokeRect(200,200,200,100)
+    ctx.clearRect(75, 75, 50, 50)
+</script>
+</html>
