@@ -61,6 +61,30 @@ class 类
                         class 子类 extends 父类{
 
                         }
-git工具使用
+git工具使用 谁创建谁是主分支
     1.在命令中使用 git init 初始化本地仓库
-    2.使用命令git status
+    2.使用命令git status 查看Git状态
+    3.使用git add 文件名 添加本地文件至暂存区
+    4.使用git restore --stanged 文件名
+    5.使用git commit -m "提交信息" 从暂存区提交到本地仓库
+    6.使用git log 查看提交记录
+
+git分支 在那个分支上面创建了新的分支 那么新的分支上面将会有当前分支上所有内容
+    1.使用 git branch 查看分支
+    2.使用 git branch 新的分支名 新建分支名(以开发功能或者开发者名字命名 但是一般都写英文)
+    3.使用 git checkout 分支名 切换分支(分支名必须是存在的分支名) 
+    4.使用 git merge 子分支名称 合并分支(如果想要合并分支 首先必须在当前分支上)
+    5.使用 git branch -d 子分支名称 删除分支(删除子分支只要不在当前子分支，在哪个分支都可以)
+
+git远端仓库
+    gitee
+    github
+        推送远端仓库
+            git push
+            git clone 远程仓库地址 
+            git push --set-upstrezm origin 新的分支名 推送当前分支至远端
+                删除远端分支时 本地同名分支不会被删除 删除远端分支时 要在其他分支上
+            git push origin --delete 分支名 删除远端分支
+
+git工具使用
+    
