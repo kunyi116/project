@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        git远端仓库
+            github
+                国际的代码托管平台
+                https://github.com/
+                
+            gitee
+                国内的代码托管平台码云
+                https://gitee.com/
+
+               
+                
+            创建远端仓库
+                执行以下代码 在本地电脑的某个盘里边执行
+                    仓库创建的时候 官方给的代码
+                    mkdir stock
+                    cd stock
+                    git init 
+                    touch README.md
+                    git add README.md
+                    git commit -m "first commit"
+                    git remote add origin https://gitee.com/xiaochaoren007/stock.git
+                    git push -u origin "master"
+
+            关联远端仓库到本地仓库
+                git remote add origin https://gitee.com/xiaochaoren007/stock.git 
+
+            推送本地代码到远端仓库
+                git push -u origin "master"
+            
+
+            推送远程仓库
+                git push
+
+
+            加载远程仓库代码到本地(克隆仓库)
+                git clone 远程仓库地址   注意：远程仓库地址我们一般使用https 很少使用ssh
+            
+            推送新的分支到远端
+                git push --set-upstream origin 新的分支名
+
+            删除远端分支
+                git push origin --delete 分支名
+
+                注意：
+                    删除远端分支时候 本地同名分支不会被删除
+                    删除远端分支时候 你需要在其它分支上
+
+            拉取代码(每一次推送代码之前 先拉取代码)
+                git pull
+
+
+            git工具使用(可视化工具)
+                sourcetree
+                    网址：https://www.sourcetreeapp.com/
+
+
+            git完整分支：
+                提交git代码
+                    每天上班前 先从远端拉取一下最新代码
+                    每天下班之前 将今天所写的代码上传到远端
+
+                1.master分支(主分支)
+                一般是由项目创建者发开 创建的  该分支一般的开发者无权进行操作(上传 合并 修改 删除) 该分支不允许被污染(保证正确)
+
+                2.develop分支(dev分支)  开发分支
+                指的是日常的项目开发阶段(未开发完全 还没有经过测试验证)  日常开发经常使用分支  该分支是基于主分支创建出来的
+                开发阶段 所有开发者代码 都需要提交到dev分支上  经过测试无误之后 由项目创建者将dev分支代码 合并到master主分支
+
+                3.feature分支(功能分支)
+                开发过程中 我们需要紧急或者临时添加一个页面或者一个功能  功能分支一般是基于dev分支或者master分支创建的
+                在功能分支编写新的页面或者测试新的功能  如果没有问题 可以合并到dev分支或者直接合并master主分支
+
+                4.release分支(预发布分支)
+                如果现在项目都开发完成了 现在需要进行上线  我们会基于master主分支创建release预发布分支  测试预发布分支上边代码  如果准确无误就会提交到服务器 进行项目上线
+
+                5.hotfix分支(热修复分支)
+                如果项目上线之后 出现了问题 需要紧急修复  这个时候我们会依赖master分支代码 创建一个热修复分支 在分支上边进行代码的调试修改 修改完毕合并master主分支直接上线
+
+    -->
+</body>
+</html>
