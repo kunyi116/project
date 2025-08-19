@@ -1,0 +1,40 @@
+webpack打包
+    webpack 是一个用于现代 JavaScript 应用程序的 静态模块打包工具 想要使用打包工具要使用node.js
+    四个核心
+        入口(entry)
+        输出(output)
+        loader
+        插件(plugin)
+    创建一个webpack打包项目流程
+        步骤：
+            1.创建一个项目文件
+            mkdir 项目名
+
+
+
+ES6模块导入与导出 
+    导入与导出时如果引入的变量名或者方法名与当前文件冲突 我们可以设置别名使用 as 关键字为导入的变量指定别名
+    例子 import {变量名 as 新的变量名}
+    两个
+        导入 import 
+            例如项目需要引入index.js
+            1.只引入一个变量或常量的方法
+                import 自定义名字 from 'index.js的相对路径'
+            2.引入多个变量常量或者方法
+                import {变量名，函数名，类名} from 'js文件路径'
+        导出 export
+            1.导出一个
+                const 变量名=值
+                export defalt 变量名
+            2.导出多个
+                export {变量，常量，方法名} (这里的方法名不加括号)
+commonJS语法
+    模块的导入与导出
+        导入
+            const 常量名1=require('引入js的路径/模块名')
+            const 常量名2=require('引入js的路径/模块名')
+        导出
+            module.exports={
+                常量名1，
+                常量名2
+            }
